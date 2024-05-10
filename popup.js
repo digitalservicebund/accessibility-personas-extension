@@ -1,34 +1,22 @@
-document.querySelectorAll('.select-persona').forEach(button => {
-  button.addEventListener('click', function() {
-    const cssFile = this.getAttribute('data-css');
-    const jsFile = this.getAttribute('data-js') || null;
-    const overlayId = this.getAttribute('data-overlay');
+document.querySelectorAll(".select-persona").forEach((button) => {
+  button.addEventListener("click", function () {
+    // Get the CSS and JS file names from the data attributes
+    const cssFile = this.getAttribute("data-css");
+    const jsFile = this.getAttribute("data-js") || null;
 
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.scripting.removeCSS({
-        target: {tabId: tabs[0].id},
-        files: ["ashleigh.css", "chris.css", "pawel.css", "ron.css"]
-      }, () => {
-        chrome.scripting.insertCSS({
-          target: {tabId: tabs[0].id},
-          files: [cssFile]
-        });
-      });
+    // Send a message to the background script to update the persona
+    chrome.runtime.sendMessage({ action: "updatePersona", cssFile, jsFile });
 
-      if (jsFile) {
-        chrome.scripting.executeScript({
-          target: {tabId: tabs[0].id},
-          files: [jsFile]
-        });
-      }
-    });
-    
-    document.getElementById(overlayId).style.display = 'block';
+    // Show the overlay with persona details and instructions
+    const overlayId = this.getAttribute("data-overlay");
+    document.getElementById(overlayId).style.display = "block";
+    console.log("overlayId", overlayId);
   });
 });
 
-document.querySelectorAll('.close-overlay').forEach(button => {
-  button.addEventListener('click', function() {
-    this.parentElement.parentElement.style.display = 'none';
+document.querySelectorAll(".close-overlay").forEach((button) => {
+  // Hide the overlay when the close button is clicked
+  button.addEventListener("click", function () {
+    this.parentElement.parentElement.style.display = "none";
   });
 });

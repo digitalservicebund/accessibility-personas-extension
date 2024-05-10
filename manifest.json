@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "A11y Persona Simulator",
+  "description": "Simulates the accessibility personas created by the UK Government Digital Service",
+  "icons": {
+    "16": "images/icon_16px.png",
+    "48": "images/icon_48px.png",
+    "128": "images/icon_128px.png"
+  },
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "<all_urls>"
+],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["persona_styles/*.css", "persona_scripts/*.js", "images/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

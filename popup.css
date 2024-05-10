@@ -1,0 +1,121 @@
+body {
+  font-family: sans-serif;
+  width: 550px;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-top: 10px;
+}
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+  padding-top: 10px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #222;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #444; 
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #000; 
+  transform: scale(0.95);
+}
+
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white; 
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+
+.intro-text {
+  font-size: 0.85rem;
+}
+
+.persona {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.persona-name {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.persona-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.persona img {
+  width: 60px;
+  height: auto;
+}
+
+.persona-description {
+  flex-grow: 1;
+  margin: 0 16px;
+  font-size: 0.9rem;
+}
+
+.select-persona {
+  font-size: medium;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.overlay-content {
+  position: absolute;
+  font-size: medium;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Offset by its own dimensions for centering */
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.close-overlay {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  margin-top: 20px;
+}

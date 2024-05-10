@@ -22,11 +22,11 @@ button {
   border-radius: 5px;
   background-color: #222;
   transition: background-color 0.3s, transform 0.2s;
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #444; 
-  transform: scale(1.05);
 }
 
 button:active {
@@ -34,6 +34,26 @@ button:active {
   transform: scale(0.95);
 }
 
+button:disabled {
+  background-color: #ccc;
+}
+
+.selected-button {
+  background-color: rgb(75, 117, 75);
+}
+
+#reset-button {
+  width: 100%;
+  background-color: #00f;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  display: none;
+}
+
+#reset-button:hover {
+  background-color: #00b;
+}
 
 .sticky-header {
   position: sticky;
@@ -48,6 +68,16 @@ button:active {
   font-size: 0.85rem;
 }
 
+#new-tab-hint {
+  font-size: 0.85rem;
+  font-weight: bold;
+  background-color: rgb(75, 117, 75);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
 .persona {
   display: flex;
   flex-direction: column;
@@ -56,6 +86,11 @@ button:active {
   margin: 10px 0;
   background-color: #f9f9f9;
   border-radius: 5px;
+}
+
+.selected-persona {
+  background-color: rgb(75, 117, 75);
+  color: white;
 }
 
 .persona-name {
@@ -88,9 +123,19 @@ button:active {
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+.instructions {
+  font-size: medium;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: none;
+}
+
 .overlay {
   display: none;
   position: fixed;
+  color:#000;
   left: 0;
   top: 0;
   width: 100%;

@@ -7,7 +7,8 @@
   <div class="sticky-header">
     <h1>Accessibility Profiles</h1>
     <p class="intro-text">Choose a profile to simulate the experience of users with different accessibility needs.</p>
-    <p class="intro-text"><strong>Note:</strong> Reload the page before switching to a new profile.</p>
+    <p id="new-tab-hint">A simulation is running. Open a new tab to simulate another profile.</p>
+    <button id="reset-button">Reset profile</button>
   </div>
   
   <div class="persona-list">
@@ -16,7 +17,8 @@
       <div class="persona-content">
         <img src="images/ashleigh.png" alt="Ashleigh">
         <p class="persona-description"><strong>A severely sight-impaired user.</strong> Ashleigh uses a screen reader to navigate the web.</p>
-        <button class="select-persona" data-css="persona_styles/ashleigh.css" data-overlay="ashleighOverlay">Activate</button>
+        <button class="select-persona" data-css="persona_styles/ashleigh.css" data-overlay="ashleighOverlay" id="ashleigh">Activate</button>
+        <button class="instructions" data-overlay="ashleighOverlay">Instructions</button>
       </div>
       <div class="overlay" id="ashleighOverlay">
         <div class="overlay-content">
@@ -35,7 +37,8 @@
       <div class="persona-content">
         <img src="images/pawel.png" alt="Pawel">
         <p class="persona-description"><strong>An autistic user.</strong> Pawel is easily distracted when browsing the web.</p>
-        <button class="select-persona" data-css="persona_styles/pawel.css" data-js="persona_scripts/distractions.user.js" data-overlay="pawelOverlay">Activate</button>
+        <button class="select-persona" data-css="persona_styles/pawel.css" data-js="persona_scripts/distractions.user.js" data-overlay="pawelOverlay" id="pawel">Activate</button>
+        <button class="instructions" data-overlay="pawelOverlay">Instructions</button>
       </div>
       <div class="overlay" id="pawelOverlay">
         <div class="overlay-content">
@@ -58,7 +61,8 @@
     <div class="persona-content">
       <img src="images/simone.png" alt="Simone">
       <p class="persona-description"><strong>A dyslexic user.</strong> Simone needs more time to understand text and fill out forms.</p>
-      <button class="select-persona" data-js="persona_scripts/scramble-letters.user.js" data-overlay="simoneOverlay">Activate</button>
+      <button class="select-persona" data-js="persona_scripts/scramble-letters.user.js" data-overlay="simoneOverlay" id="simone">Activate</button>
+      <button class="instructions" data-overlay="simoneOverlay">Instructions</button>
     </div>
     <div class="overlay" id="simoneOverlay">
       <div class="overlay-content">
@@ -78,7 +82,8 @@
     <div class="persona-content">
       <img src="images/ron.png" alt="Ron">
       <p class="persona-description"><strong>An older user with multiple conditions.</strong> Ron does not use any assistive technology.</p>
-      <button class="select-persona" data-css="persona_styles/ron.css" data-js="persona_scripts/wobbly-mouse.user.js" data-overlay="ronOverlay">Activate</button>
+      <button class="select-persona" data-css="persona_styles/ron.css" data-js="persona_scripts/wobbly-mouse.user.js" data-overlay="ronOverlay" id="ron">Activate</button>
+      <button class="instructions" data-overlay="ronOverlay">Instructions</button>
     </div>
     <div class="overlay" id="ronOverlay">
       <div class="overlay-content">
@@ -98,7 +103,8 @@
     <div class="persona-content">
       <img src="images/claudia.png" alt="Claudia">
       <p class="persona-description"><strong>A sight-impaired user.</strong> Claudia uses a screen magnifier to browse the web.</p>
-      <button class="select-persona" data-overlay="claudiaOverlay">Activate</button>
+      <button class="select-persona" data-overlay="claudiaOverlay" id="claudia">Activate</button>
+      <button class="instructions" data-overlay="claudiaOverlay">Instructions</button>
     </div>
     <div class="overlay" id="claudiaOverlay">
       <div class="overlay-content">
@@ -118,7 +124,8 @@
     <div class="persona-content">
       <img src="images/chris.png" alt="Chris">
       <p class="persona-description"><strong>A user with rheumatoid arthritis.</strong> Chris navigates the web with his keyboard.</p>
-      <button class="select-persona" data-css="persona_styles/chris.css" data-overlay="chrisOverlay">Activate</button>
+      <button class="select-persona" data-css="persona_styles/chris.css" data-overlay="chrisOverlay" id="chris">Activate</button>
+      <button class="instructions" data-overlay="chrisOverlay">Instructions</button>
     </div>
     <div class="overlay" id="chrisOverlay">
       <div class="overlay-content">

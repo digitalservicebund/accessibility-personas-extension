@@ -16,7 +16,7 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "popup.js"
   },
   "web_accessible_resources": [
     {

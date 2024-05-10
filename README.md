@@ -5,7 +5,7 @@ Various impairments (e.g, low vision, dyslexia) are simulated by injecting CSS a
 
 
 ## Usage
-Simply select a persona from the extension menu and the current browser tab simulates. 
+Simply select a persona from the extension and the current browser tab will be adjusted to simulate the persona's experience.
 
 ![A screenshot of the browser extension, illustrating its functionality](images/screenshot.png)
 

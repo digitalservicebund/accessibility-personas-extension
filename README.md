@@ -7,7 +7,7 @@ Various impairments (e.g, low vision, dyslexia) are simulated by injecting CSS a
 ## Usage
 Simply select a persona from the extension and the current browser tab will be adjusted to simulate the persona's experience.
 
-![A screenshot of the browser extension, illustrating its functionality](images/screenshot.png)
+![A demo of the browser extension, illustrating its functionality](images/demo.gif)
 
 For some personas, you need to install additional extensions or change your system settings (e.g., activate VoiceOver on your Mac). This is mentioned in the additional instructions for each persona.
 

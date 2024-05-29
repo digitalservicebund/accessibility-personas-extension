@@ -36,14 +36,35 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
       }
     });
+  } else if (request.action == "resetSimulation") {
+    // Open a new tab with the same URL, which ends the persona simulation
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const currentTab = tabs[0];
+      const currentTabId = currentTab.id;
+      const currentTabUrl = currentTab.url;
+
+      // Open a new tab with the same URL
+      chrome.tabs.create({ url: currentTabUrl }, (newTab) => {
+        // Close the current tab after opening the new one
+        chrome.tabs.remove(currentTabId, () => {
+          if (chrome.runtime.lastError) {
+            console.error("Error closing tab:", chrome.runtime.lastError);
+          } else {
+            console.log("Old tab closed successfully.");
+          }
+        });
+      });
+    });
   }
 });
+
+//
+chrome.runtime.onMessage.addListener();
 
 // Listen for tab updates, and re-insert the CSS and JS files if necessary
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "loading") {
     chrome.storage.local.get([tabId.toString()], function (result) {
-      console.log("result", result);
       if (result[tabId]) {
         const { cssFile, jsFile } = result[tabId];
         // Reinsert CSS

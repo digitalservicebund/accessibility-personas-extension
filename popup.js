@@ -7,6 +7,7 @@ function formatPersonaList() {
         // Extract the personaName
         const personaName = result[currentTabId].personaName;
 
+        // If a persona has already been selected, format the list
         if (personaName !== undefined) {
           // Disable all buttons
           document.querySelectorAll(".select-persona").forEach((button) => {
@@ -27,8 +28,10 @@ function formatPersonaList() {
             "selected-persona"
           );
 
-          // Show the hint to open a new tab for a new persona
-          document.getElementById("new-tab-hint").style.display = "block";
+          // Show the banner to notify the user that a simulation is running
+          // The banner also includes a reset button
+          document.getElementById("simulation-running-banner").style.display =
+            "flex";
         }
       }
     });
@@ -85,4 +88,9 @@ document.querySelectorAll(".close-overlay").forEach((button) => {
     // Format the persona list
     formatPersonaList();
   });
+});
+
+// Listen to clicks on the reset button
+document.getElementById("reset-button").addEventListener("click", function () {
+  chrome.runtime.sendMessage({ action: "resetSimulation" });
 });

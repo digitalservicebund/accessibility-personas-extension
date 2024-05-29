@@ -19,10 +19,14 @@ h4 {
 }
 
 button {
+  color:white;
   border-radius: 5px;
   background-color: #222;
   transition: background-color 0.3s, transform 0.2s;
   font-weight: bold;
+  padding: 8px 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: medium;
 }
 
 button:hover {
@@ -38,44 +42,20 @@ button:disabled {
   background-color: #ccc;
 }
 
-.selected-button {
-  background-color: rgb(75, 117, 75);
-}
-
-#reset-button {
-  width: 100%;
-  background-color: #00f;
-  color: white;
-  font-size: 1rem;
-  padding: 10px;
-  display: none;
-}
-
-#reset-button:hover {
-  background-color: #00b;
-}
 
 .sticky-header {
   position: sticky;
+  font-size: 0.85rem;
   top: 0;
   background-color: white; 
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
-
-.intro-text {
-  font-size: 0.85rem;
-}
-
-#new-tab-hint {
-  font-size: 0.85rem;
-  font-weight: bold;
-  background-color: rgb(75, 117, 75);
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
+#simulation-running-banner {
   display: none;
+  justify-content: flex-start;
+  padding: 10px;
 }
 
 .persona {
@@ -119,16 +99,12 @@ button:disabled {
   font-size: medium;
   color: white;
   border: none;
-  padding: 8px 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .instructions {
   font-size: medium;
   color: white;
   border: none;
-  padding: 8px 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   display: none;
 }
 

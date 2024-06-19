@@ -9,26 +9,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     // Insert the CSS and JS files into the current tab
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      // Store the relevant files in local storage
+      // Store the relevant file names in local storage
       chrome.storage.local.set({ [tabId]: { cssFile, jsFile, personaName } });
 
-      // Remove any existing CSS files
+      // Insert the CSS and JS files as applicable
       if (cssFile) {
-        chrome.scripting.removeCSS(
-          {
-            target: { tabId },
-            files: ["ashleigh.css", "chris.css", "pawel.css", "ron.css"],
-          },
-          // Insert the new CSS file
-          () => {
-            chrome.scripting.insertCSS({
-              target: { tabId },
-              files: [cssFile],
-            });
-          }
-        );
+        chrome.scripting.insertCSS({
+          target: { tabId },
+          files: [cssFile],
+        });
       }
-
       if (jsFile) {
         chrome.scripting.executeScript({
           target: { tabId },
@@ -64,17 +54,18 @@ chrome.runtime.onMessage.addListener();
 // Listen for tab updates, and re-insert the CSS and JS files if necessary
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "loading") {
-    chrome.storage.local.get([tabId.toString()], function (result) {
-      if (result[tabId]) {
-        const { cssFile, jsFile } = result[tabId];
-        // Reinsert CSS
+    // Get the CSS and JS file names from local storage
+    chrome.storage.local.get([tabId.toString()], function (tabData) {
+      if (tabData[tabId]) {
+        const { cssFile, jsFile } = tabData[tabId];
+        // Re-insert CSS
         if (cssFile) {
           chrome.scripting
             .insertCSS({
               target: { tabId },
               files: [cssFile],
             })
-            .catch((error) => console.error("Failed to insert CSS:", error));
+            .catch((error) => console.error("Failed to re-insert CSS:", error));
         }
 
         // Re-execute JS
@@ -84,7 +75,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
               target: { tabId },
               files: [jsFile],
             })
-            .catch((error) => console.error("Failed to execute JS:", error));
+            .catch((error) => console.error("Failed to re-insert JS:", error));
         }
       }
     });

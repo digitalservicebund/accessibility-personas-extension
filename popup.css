@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  width: 550px;
+  width: 600px;
+  height: 600px;
   color: #333;
 }
 
@@ -19,22 +20,22 @@ h4 {
 }
 
 button {
-  color:white;
+  color: white;
   border-radius: 5px;
   background-color: #222;
   transition: background-color 0.3s, transform 0.2s;
   font-weight: bold;
   padding: 8px 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   font-size: medium;
 }
 
 button:hover {
-  background-color: #444; 
+  background-color: #444;
 }
 
 button:active {
-  background-color: #000; 
+  background-color: #000;
   transform: scale(0.95);
 }
 
@@ -47,9 +48,9 @@ button:disabled {
   position: sticky;
   font-size: 0.85rem;
   top: 0;
-  background-color: white; 
+  background-color: white;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #simulation-running-banner {
@@ -111,7 +112,7 @@ button:disabled {
 .overlay {
   display: none;
   position: fixed;
-  color:#000;
+  color: #000;
   left: 0;
   top: 0;
   width: 100%;
@@ -126,7 +127,8 @@ button:disabled {
   font-size: medium;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Offset by its own dimensions for centering */
+  transform: translate(-50%, -50%);
+  /* Offset by its own dimensions for centering */
   width: 80%;
   margin: 0 auto;
   padding: 20px;

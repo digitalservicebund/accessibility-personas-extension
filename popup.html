@@ -1,148 +1,326 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="popup.css">
-</head>
-<body>
-  <div class="sticky-header">
-    <h1>Accessibility Profiles</h1>
-    <p class="intro-text">Choose a profile to simulate the experience of users with different accessibility needs.</p>
-    <div id="simulation-running-banner">
-      <button id="reset-button">Reset</button>
-    </div>
-  </div>
-  
-  <div class="persona-list">
-    <div class="persona">
-      <h3 class="persona-name">Ashleigh</h3>
-      <div class="persona-content">
-        <img src="images/ashleigh.png" alt="Ashleigh">
-        <p class="persona-description"><strong>A severely sight-impaired user.</strong> Ashleigh uses a screen reader to navigate the web.</p>
-        <button class="select-persona" data-css="persona_styles/ashleigh.css" data-overlay="ashleighOverlay" id="ashleigh">Activate</button>
-        <button class="instructions" data-overlay="ashleighOverlay">Instructions</button>
+  <head>
+    <title>Accessibility Personas</title>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+  </head>
+
+  <body>
+    <div class="sticky-header">
+      <h1>Accessibility Personas</h1>
+      <p class="intro-text">
+        Choose a persona to simulate the experience of users with different
+        accessibility needs.
+      </p>
+      <div id="simulation-running-banner">
+        <button id="reset-button">Reset</button>
       </div>
-      <div class="overlay" id="ashleighOverlay">
+    </div>
+
+    <div class="persona-list">
+      <div class="persona" persona-name="ashleigh">
+        <h3 class="persona-name">Ashleigh</h3>
+        <div class="persona-content">
+          <img src="images/ashleigh.png" alt="Ashleigh" />
+          <p class="persona-description">
+            <strong>A severely sight-impaired user.</strong> Ashleigh uses a
+            screen reader to navigate the web.
+          </p>
+          <button
+            class="select-persona"
+            data-css="persona_styles/ashleigh.css"
+            data-overlay="ashleighOverlay"
+            id="ashleigh"
+          >
+            Activate
+          </button>
+          <button class="instructions" data-overlay="ashleighOverlay">
+            Instructions
+          </button>
+        </div>
+        <div class="overlay" id="ashleighOverlay">
+          <div class="overlay-content">
+            <h4>Ashleigh's experience</h4>
+            <p>
+              The page you opened should now be blurred to simulate Ashleigh's
+              sight impairment.
+            </p>
+            <h4>Instructions</h4>
+            <p>
+              Open a screen reader on your device to experience how Ashleigh
+              navigates the page. On Mac, do this in the System Settings by
+              activating "VoiceOver".
+            </p>
+            <p>
+              <a
+                href="https://alphagov.github.io/accessibility-personas/ashleigh/"
+                target="_blank"
+                >Learn more about Ashleigh</a
+              >
+            </p>
+            <button class="close-overlay">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="persona" persona-name="pawel">
+        <h3 class="persona-name">Pawel</h3>
+        <div class="persona-content">
+          <img src="images/pawel.png" alt="Pawel" />
+          <p class="persona-description">
+            <strong>An autistic user.</strong> Pawel is easily distracted when
+            browsing the web.
+          </p>
+          <button
+            class="select-persona"
+            data-css="persona_styles/pawel.css"
+            data-js="persona_scripts/distractions.user.js"
+            data-overlay="pawelOverlay"
+            id="pawel"
+          >
+            Activate
+          </button>
+          <button class="instructions" data-overlay="pawelOverlay">
+            Instructions
+          </button>
+        </div>
+        <div class="overlay" id="pawelOverlay">
+          <div class="overlay-content">
+            <h4>Pawel's experience</h4>
+            <p>
+              Pawel is easily distracted when browsing the web. You should see
+              images and thoughts popping up, while the original text fades in
+              and out.
+            </p>
+            <h4>Instructions</h4>
+            <p>
+              Install other browser extensions to simulate Pawel's experience
+              even better.
+            </p>
+            <p>
+              <strong>1. </strong> With
+              <a
+                href="https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla"
+                >Chrome Sound Effects</a
+              >
+              you can add sound distractions. Use headphones to hear them loud
+              enough.
+            </p>
+            <p>
+              <strong>2. </strong> Add the
+              <a
+                href="https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg"
+                >Midnight Lizard</a
+              >
+              extension, which Pawel uses to adjust colors in the browser to
+              help him focus.
+            </p>
+            <p>
+              <a
+                href="https://alphagov.github.io/accessibility-personas/pawel/"
+                target="_blank"
+                >Learn more about Pawel</a
+              >
+            </p>
+            <button class="close-overlay">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="persona" persona-name="simone">
+      <h3 class="persona-name">Simone</h3>
+      <div class="persona-content">
+        <img src="images/simone.png" alt="Simone" />
+        <p class="persona-description">
+          <strong>A dyslexic user.</strong> Simone needs more time to understand
+          text and fill out forms.
+        </p>
+        <button
+          class="select-persona"
+          data-js="persona_scripts/scramble-letters.user.js"
+          data-overlay="simoneOverlay"
+          id="simone"
+        >
+          Activate
+        </button>
+        <button class="instructions" data-overlay="simoneOverlay">
+          Instructions
+        </button>
+      </div>
+      <div class="overlay" id="simoneOverlay">
         <div class="overlay-content">
-          <h4>Ashleigh's experience</h4>
-          <p>The page you opened should now be blurred to simulate Ashleigh's sight impairment.</p>
+          <h4>Simone's experience</h4>
+          <p>
+            The text on your page should now be scrambled to illustrate Simone's
+            experience with dyslexia.
+          </p>
           <h4>Instructions</h4>
-          <p>Open a screen reader on your device to experience how Ashleigh navigates the page. On Mac, do this in the System Settings by activating "VoiceOver".</p>
-          <p><a href="https://alphagov.github.io/accessibility-personas/ashleigh/" target="_blank">Learn more about Ashleigh</a></p>
+          <p>
+            Try to read paragraphs or navigate forms with this setting. Notice
+            which parts of the page are especially hard to read.
+          </p>
+          <p>
+            <a
+              href="https://alphagov.github.io/accessibility-personas/simone/"
+              target="_blank"
+              >Learn more about Simone</a
+            >
+          </p>
           <button class="close-overlay">OK</button>
         </div>
       </div>
     </div>
 
-    <div class="persona">
-      <h3 class="persona-name">Pawel</h3>
+    <div class="persona" persona-name="ron">
+      <h3 class="persona-name">Ron</h3>
       <div class="persona-content">
-        <img src="images/pawel.png" alt="Pawel">
-        <p class="persona-description"><strong>An autistic user.</strong> Pawel is easily distracted when browsing the web.</p>
-        <button class="select-persona" data-css="persona_styles/pawel.css" data-js="persona_scripts/distractions.user.js" data-overlay="pawelOverlay" id="pawel">Activate</button>
-        <button class="instructions" data-overlay="pawelOverlay">Instructions</button>
+        <img src="images/ron.png" alt="Ron" />
+        <p class="persona-description">
+          <strong>An older user with multiple conditions.</strong> Ron does not
+          use any assistive technology.
+        </p>
+        <button
+          class="select-persona"
+          data-css="persona_styles/ron.css"
+          data-js="persona_scripts/wobbly-mouse.user.js"
+          data-overlay="ronOverlay"
+          id="ron"
+        >
+          Activate
+        </button>
+        <button class="instructions" data-overlay="ronOverlay">
+          Instructions
+        </button>
       </div>
-      <div class="overlay" id="pawelOverlay">
+      <div class="overlay" id="ronOverlay">
         <div class="overlay-content">
-          <h4>Pawel's experience</h4>
-          <p>Pawel is easily distracted when browsing the web. You should see images and thoughts popping up, while the original text fades in and out.</p>
+          <h4>Ron's experience</h4>
+          <p>
+            The page should now be blurred and bright to simulate Ron's vision
+            impairment. The cursor wiggles, making it harder to select items.
+          </p>
+          <p>
+            <strong>Note: </strong>The original cursor might still be visible.
+            Navigate to a new page to fix this.
+          </p>
           <h4>Instructions</h4>
-          <p>Install other browser extensions to simulate Pawel's experience even better.</p>
-          <p><strong>1. </strong> With <a href="https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla">Chrome Sound Effects</a> you can add sound distractions. Use headphones to hear them loud enough.</p>
-          <p><strong>2. </strong> Add the <a href="https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg">Midnight Lizard</a> extension, which Pawel uses to adjust colors in the browser to help him focus.</p>
-          <p><a href="https://alphagov.github.io/accessibility-personas/pawel/" target="_blank">Learn more about Pawel</a></p>
+          <p>
+            Check if the contrasts on the page are still sufficient and if all
+            text can be read. Notice how much easier it is when the most
+            important information is mentioned upfront.
+          </p>
+          <p>
+            <a
+              href="https://alphagov.github.io/accessibility-personas/ron/"
+              target="_blank"
+              >Learn more about Ron</a
+            >
+          </p>
           <button class="close-overlay">OK</button>
         </div>
       </div>
-    </div>     
-  </div>
-
-
-  <div class="persona">
-    <h3 class="persona-name">Simone</h3>
-    <div class="persona-content">
-      <img src="images/simone.png" alt="Simone">
-      <p class="persona-description"><strong>A dyslexic user.</strong> Simone needs more time to understand text and fill out forms.</p>
-      <button class="select-persona" data-js="persona_scripts/scramble-letters.user.js" data-overlay="simoneOverlay" id="simone">Activate</button>
-      <button class="instructions" data-overlay="simoneOverlay">Instructions</button>
     </div>
-    <div class="overlay" id="simoneOverlay">
-      <div class="overlay-content">
-        <h4>Simone's experience</h4>
-        <p>The text on your page should now be scrambled to illustrate Simone's experience with dyslexia.</p>
-        <h4>Instructions</h4>
-        <p>Try to read paragraphs or navigate forms with this setting. Notice which parts of the page are especially hard to read.</p>
-        <p><a href="https://alphagov.github.io/accessibility-personas/simone/" target="_blank">Learn more about Simone</a></p>
-        <button class="close-overlay">OK</button>
+
+    <div class="persona" persona-name="claudia">
+      <h3 class="persona-name">Claudia</h3>
+      <div class="persona-content">
+        <img src="images/claudia.png" alt="Claudia" />
+        <p class="persona-description">
+          <strong>A sight-impaired user.</strong> Claudia uses a screen
+          magnifier to browse the web.
+        </p>
+        <button
+          class="select-persona"
+          data-overlay="claudiaOverlay"
+          id="claudia"
+        >
+          Activate
+        </button>
+        <button class="instructions" data-overlay="claudiaOverlay">
+          Instructions
+        </button>
+      </div>
+      <div class="overlay" id="claudiaOverlay">
+        <div class="overlay-content">
+          <h4>Claudia's experience</h4>
+          <p>
+            There is no automatic simulation for this persona. Claudia changes
+            her settings to view websites at a larger size, with a larger
+            cursor, and higher contrast.
+          </p>
+          <h4>Instructions</h4>
+          <p>
+            <strong>1.</strong>Create a new Chrome profile in your browser and
+            call it "Claudia". In "Settings > Appearance > Page zoom", select
+            <strong>400% zoom</strong>.
+          </p>
+          <p>
+            <strong>2.</strong>In your Mac's system settings, navigate to
+            "Accessibility > Display". Set your cursor to maximum size and
+            increase contrast to the maximum.
+          </p>
+          <p>
+            <a
+              href="https://alphagov.github.io/accessibility-personas/claudia/"
+              target="_blank"
+              >Learn more about Claudia</a
+            >
+          </p>
+          <button class="close-overlay">OK</button>
+        </div>
       </div>
     </div>
-  </div> 
-  
 
-  <div class="persona">
-    <h3 class="persona-name">Ron</h3>
-    <div class="persona-content">
-      <img src="images/ron.png" alt="Ron">
-      <p class="persona-description"><strong>An older user with multiple conditions.</strong> Ron does not use any assistive technology.</p>
-      <button class="select-persona" data-css="persona_styles/ron.css" data-js="persona_scripts/wobbly-mouse.user.js" data-overlay="ronOverlay" id="ron">Activate</button>
-      <button class="instructions" data-overlay="ronOverlay">Instructions</button>
-    </div>
-    <div class="overlay" id="ronOverlay">
-      <div class="overlay-content">
-        <h4>Ron's experience</h4>
-        <p>The page should now be blurred and bright to simulate Ron's vision impairment. The cursor wiggles, making it harder to select items.</p>
-        <p><strong>Note: </strong>The original cursor might still be visible. Navigate to a new page to fix this.</p>
-        <h4>Instructions</h4>
-        <p>Check if the contrasts on the page are still sufficient and if all text can be read. Notice how much easier it is when the most important information is mentioned upfront.</p>
-        <p><a href="https://alphagov.github.io/accessibility-personas/ron/" target="_blank">Learn more about Ron</a></p>
-        <button class="close-overlay">OK</button>
+    <div class="persona" persona-name="chris">
+      <h3 class="persona-name">Chris</h3>
+      <div class="persona-content">
+        <img src="images/chris.png" alt="Chris" />
+        <p class="persona-description">
+          <strong>A user with rheumatoid arthritis.</strong> Chris navigates the
+          web with his keyboard.
+        </p>
+        <button
+          class="select-persona"
+          data-css="persona_styles/chris.css"
+          data-overlay="chrisOverlay"
+          id="chris"
+        >
+          Activate
+        </button>
+        <button class="instructions" data-overlay="chrisOverlay">
+          Instructions
+        </button>
+      </div>
+      <div class="overlay" id="chrisOverlay">
+        <div class="overlay-content">
+          <h4>Christopher's experience</h4>
+          <p>
+            Chris does not see colors well, and your page should be shown in
+            greyscale now. Your mouse cursor should be hidden.
+          </p>
+          <p>
+            <strong>Note: </strong>If the cursor is still visible, click any
+            link to navigate to a new page.
+          </p>
+          <h4>Instructions</h4>
+          <p>
+            Put your mouse aside and only use the keyboard to navigate the page.
+            Use the TAB and ENTER keys and pay attention to the order in which
+            elements are selected.
+          </p>
+          <p>
+            <a
+              href="https://alphagov.github.io/accessibility-personas/chris/"
+              target="_blank"
+              >Learn more about Chris</a
+            >
+          </p>
+          <button class="close-overlay">OK</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="persona">
-    <h3 class="persona-name">Claudia</h3>
-    <div class="persona-content">
-      <img src="images/claudia.png" alt="Claudia">
-      <p class="persona-description"><strong>A sight-impaired user.</strong> Claudia uses a screen magnifier to browse the web.</p>
-      <button class="select-persona" data-overlay="claudiaOverlay" id="claudia">Activate</button>
-      <button class="instructions" data-overlay="claudiaOverlay">Instructions</button>
-    </div>
-    <div class="overlay" id="claudiaOverlay">
-      <div class="overlay-content">
-        <h4>Claudia's experience</h4>
-        <p>There is no automatic simulation for this persona. Claudia changes her settings to view websites at a larger size, with a larger cursor, and higher contrast.</p>
-        <h4>Instructions</h4>
-        <p><strong>1.</strong>Create a new Chrome profile in your browser and call it "Claudia". In "Settings > Appearance > Page zoom", select <strong>400% zoom</strong>.</p>
-        <p><strong>2.</strong>In your Mac's system settings, navigate to "Accessibility > Display". Set your cursor to maximum size and increase contrast to the maximum.</p>
-        <p><a href="https://alphagov.github.io/accessibility-personas/claudia/" target="_blank">Learn more about Claudia</a></p>
-        <button class="close-overlay">OK</button>
-      </div>
-    </div>
-  </div>
-  
-  <div class="persona">
-    <h3 class="persona-name">Chris</h3>
-    <div class="persona-content">
-      <img src="images/chris.png" alt="Chris">
-      <p class="persona-description"><strong>A user with rheumatoid arthritis.</strong> Chris navigates the web with his keyboard.</p>
-      <button class="select-persona" data-css="persona_styles/chris.css" data-overlay="chrisOverlay" id="chris">Activate</button>
-      <button class="instructions" data-overlay="chrisOverlay">Instructions</button>
-    </div>
-    <div class="overlay" id="chrisOverlay">
-      <div class="overlay-content">
-        <h4>Christopher's experience</h4>
-        <p>Chris does not see colors well, and your page should be shown in greyscale now. Your mouse cursor should be hidden.</p>
-        <p><strong>Note: </strong>If the cursor is still visible, click any link to navigate to a new page.</p>
-        <h4>Instructions</h4>
-        <p>Put your mouse aside and only use the keyboard to navigate the page. Use the TAB and ENTER keys and pay attention to the order in which elements are selected.</p>
-        <p><a href="https://alphagov.github.io/accessibility-personas/chris/" target="_blank">Learn more about Chris</a></p>
-        <button class="close-overlay">OK</button>
-      </div>
-    </div>
-    </div>
-  </div> 
-
-</div>
-<script src="popup.js"></script>
-</body>
+    <script src="popup.js"></script>
+  </body>
 </html>

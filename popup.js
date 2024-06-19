@@ -5,28 +5,35 @@ function formatPersonaList() {
     chrome.storage.local.get([currentTabId.toString()], function (result) {
       if (result[currentTabId]) {
         // Extract the personaName
-        const personaName = result[currentTabId].personaName;
+        const activePersonaName = result[currentTabId].personaName;
 
         // If a persona has already been selected, format the list
-        if (personaName !== undefined) {
+        if (activePersonaName !== undefined) {
           // Disable all buttons
           document.querySelectorAll(".select-persona").forEach((button) => {
             button.disabled = true;
           });
 
-          // Hide the selected button
-          document.getElementById(personaName).style.display = "none";
-          // Display the respective instruction button instead
-          const selector = `.instructions[data-overlay="${personaName}Overlay"]`;
-          console.log("selector", selector);
+          // Hide the selected "Activate" button
+          document.getElementById(activePersonaName).style.display = "none";
+          // Display the respective "Instructions" button instead
+          const selector = `.instructions[data-overlay="${activePersonaName}Overlay"]`;
           const personaInstructionButton = document.querySelector(selector);
-          console.log("personaInstructionButton", personaInstructionButton);
           personaInstructionButton.style.display = "block";
 
           // Format the selected persona
           personaInstructionButton.parentElement.parentElement.classList.add(
             "selected-persona"
           );
+
+          // Remove all the non-selected personas
+          document.querySelectorAll(".persona").forEach((persona) => {
+            const thisPersonaName = persona.getAttribute("persona-name");
+            if (thisPersonaName != activePersonaName) {
+              console.log("persona", persona["persona-name"]);
+              persona.style.display = "none";
+            }
+          });
 
           // Show the banner to notify the user that a simulation is running
           // The banner also includes a reset button
@@ -37,7 +44,6 @@ function formatPersonaList() {
     });
   });
 }
-
 formatPersonaList();
 
 // Listen to clicks on the select-persona buttons

@@ -1,63 +1,66 @@
-function formatPersonaList() {
+function formatPersonaList(personaName = null) {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     const currentTabId = tabs[0].id;
 
-    chrome.storage.local.get([currentTabId.toString()], function (result) {
-      if (result[currentTabId]) {
-        // Extract the personaName
-        const activePersonaName = result[currentTabId].personaName;
+    function updateElements(selectedPersonaName) {
+      // Hide the activation button for the selected persona
+      const activationButton = document.querySelector(
+        `.select-persona[persona-name="${selectedPersonaName}"]`
+      );
+      activationButton.style.display = "none";
 
-        // If a persona has already been selected, format the list
-        if (activePersonaName !== undefined) {
-          // Disable all buttons
-          document.querySelectorAll(".select-persona").forEach((button) => {
-            button.disabled = true;
-          });
+      // Show the instructions for the selected persona
+      const instructionsElement = document.querySelector(
+        `.instructions[persona-name="${selectedPersonaName}"]`
+      );
+      instructionsElement.style.display = "block";
 
-          // Hide the selected "Activate" button
-          document.getElementById(activePersonaName).style.display = "none";
-          // Display the respective "Instructions" button instead
-          const selector = `.instructions[data-overlay="${activePersonaName}Overlay"]`;
-          const personaInstructionButton = document.querySelector(selector);
-          personaInstructionButton.style.display = "block";
-
-          // Format the selected persona
-          personaInstructionButton.parentElement.parentElement.classList.add(
-            "selected-persona"
-          );
-
-          // Remove all the non-selected personas
-          document.querySelectorAll(".persona").forEach((persona) => {
-            const thisPersonaName = persona.getAttribute("persona-name");
-            if (thisPersonaName != activePersonaName) {
-              console.log("persona", persona["persona-name"]);
-              persona.style.display = "none";
-            }
-          });
-
-          // Show the banner to notify the user that a simulation is running
-          // The banner also includes a reset button
-          document.getElementById("simulation-running-banner").style.display =
-            "flex";
+      // Hide all non-selected personas
+      document.querySelectorAll(".persona").forEach((persona) => {
+        if (persona.getAttribute("persona-name") !== selectedPersonaName) {
+          persona.style.display = "none";
         }
-      }
-    });
+      });
+
+      // Show the reset button
+      document.getElementById("reset-button").style.display = "block";
+
+      // Hide the general introduction in the header
+      document.getElementById("introduction").style.display = "none";
+    }
+
+    if (personaName) {
+      updateElements(personaName);
+    } else {
+      chrome.storage.local.get([currentTabId.toString()], function (result) {
+        if (
+          result[currentTabId] &&
+          result[currentTabId].personaName !== undefined
+        ) {
+          updateElements(result[currentTabId].personaName);
+        }
+      });
+    }
   });
 }
+
+// Attempt to format the persona list based on local storage when the popup is opened
 formatPersonaList();
 
-// Listen to clicks on the select-persona buttons
+// Persona selection button: Reformat the list and start the simulatino
 document.querySelectorAll(".select-persona").forEach((button) => {
   button.addEventListener("click", function () {
     // Get the CSS and JS file names from the data attributes
     const cssFile = this.getAttribute("data-css");
     const jsFile = this.getAttribute("data-js") || null;
-    const personaName = this.getAttribute("id");
+    const personaName = this.getAttribute("persona-name");
 
+    // Format the persona list
+    formatPersonaList(personaName);
+
+    // Send a message to the background script to start simulation
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       const currentTabId = tabs[0].id;
-
-      // Send a message to the background script to update the persona and enable simulation
       chrome.runtime.sendMessage({
         action: "updatePersona",
         cssFile,
@@ -66,37 +69,10 @@ document.querySelectorAll(".select-persona").forEach((button) => {
         tabId: currentTabId,
       });
     });
-
-    // Show the overlay with persona details and instructions
-    const overlayId = this.getAttribute("data-overlay");
-    document.getElementById(overlayId).style.display = "block";
-
-    // Format the persona list
-    formatPersonaList();
   });
 });
 
-// Listen to clicks on the instructions buttons, and show the overlay
-document.querySelectorAll(".instructions").forEach((button) => {
-  button.addEventListener("click", function () {
-    // Show the overlay with persona details and instructions
-    const overlayId = this.getAttribute("data-overlay");
-    document.getElementById(overlayId).style.display = "block";
-  });
-});
-
-// Listen to clicks on the close-overlay button
-document.querySelectorAll(".close-overlay").forEach((button) => {
-  button.addEventListener("click", function () {
-    // Hide the overlay
-    this.parentElement.parentElement.style.display = "none";
-
-    // Format the persona list
-    formatPersonaList();
-  });
-});
-
-// Listen to clicks on the reset button
+// Reset button: Open a new tab with the original URL
 document.getElementById("reset-button").addEventListener("click", function () {
   chrome.runtime.sendMessage({ action: "resetSimulation" });
 });

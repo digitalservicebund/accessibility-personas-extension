@@ -1,15 +1,15 @@
 # Simulating accessibility personas
-Chrome extension for simulating the [accessibility personas](https://github.com/alphagov/accessibility-personas) that were created by the UK Government Digital Service. This is a work in progress and feedback is welcome!
+Chrome extension for simulating the [accessibility personas](https://github.com/alphagov/accessibility-personas) that were created by the UK Government Digital Service (GDS) and adapted by the German DigitalService. The is a work in progress and feedback is welcome!
 
 Various impairments (e.g, low vision, dyslexia) are simulated by injecting CSS and JS to change the appearance and behavior of websites in the currently active tab. The CSS and JS files were obtained directly from the GDS repo.
 
 
 ## Usage
-Simply select a persona from the extension and the current browser tab will be adjusted to simulate the persona's experience.
+Select a persona from the extension and the current browser tab will be adjusted to simulate the persona's experience.
 
-![A demo of the browser extension, illustrating its functionality](images/demo.gif)
+![Screenshot of the extension](images/screenshot.png)
 
-For some personas, you need to install additional extensions or change your system settings (e.g., activate VoiceOver on your Mac). This is mentioned in the additional instructions for each persona.
+For some personas, you will need to install additional extensions at this point, or change your system settings (e.g., activate VoiceOver on your Mac). This is mentioned in the additional instructions for each persona.
 
 
 ## Installation

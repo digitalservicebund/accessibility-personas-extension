@@ -1,7 +1,7 @@
 # Simulating accessibility personas
 Chrome extension for simulating the [accessibility personas](https://github.com/alphagov/accessibility-personas) that were created by the UK Government Digital Service (GDS) and adapted by the German DigitalService. The is a work in progress and feedback is welcome!
 
-Various impairments (e.g, low vision, dyslexia) are simulated by injecting CSS and JS to change the appearance and behavior of websites in the currently active tab. The CSS and JS files were obtained directly from the GDS repo.
+Various impairments (e.g, low vision, dyslexia) are simulated by injecting CSS and JS to change the appearance and behavior of websites in the currently active tab. The CSS and JS files were obtained directly from the GDS repo, sometimes with slight adjustments.
 
 
 ## Usage

@@ -27,10 +27,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       }
 
       // Workaround:
-      // If the persona is Claudia, set Chrome's zoom to 300%
+      // If the persona is Claudia, set Chrome's zoom to 200%
       // For now, this lives here to ensure access to the chrome.tabs API
       if (personaName === "claudia") {
-        chrome.tabs.setZoom(tabId, 3.0);
+        chrome.tabs.setZoom(tabId, 2.0);
       }
     });
   } else if (request.action == "resetSimulation") {

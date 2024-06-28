@@ -25,13 +25,23 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           files: [jsFile],
         });
       }
+
+      // Workaround:
+      // If the persona is Claudia, set Chrome's zoom to 300%
+      // For now, this lives here to ensure access to the chrome.tabs API
+      if (personaName === "claudia") {
+        chrome.tabs.setZoom(tabId, 3.0);
+      }
     });
   } else if (request.action == "resetSimulation") {
-    // Open a new tab with the same URL, which ends the persona simulation
+    // Reset the simulation by closing the current tab and opening a new one
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const currentTab = tabs[0];
       const currentTabId = currentTab.id;
       const currentTabUrl = currentTab.url;
+
+      // Reset the zoom level
+      chrome.tabs.setZoom(currentTabId, 0);
 
       // Open a new tab with the same URL
       chrome.tabs.create({ url: currentTabUrl }, (newTab) => {

@@ -20,7 +20,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["persona_styles/*.css", "persona_scripts/*.js", "images/*.png", "*.css"],
+      "resources": ["personas/**/*.css", "personas/**/*.js", "personas/**/*.png", "personas/**/*.svg"],
       "matches": ["<all_urls>"]
     }
   ]  

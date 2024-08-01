@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "A11y Persona Simulator",
-  "description": "Simulates the web experience of accessibility personas",
+  "name": "Simulating accessibility personas",
+  "description": "This extension simulates accessibility personas by altering the style and behavior of the currently active browser tab.",
   "icons": {
     "16": "images/icon_16px.png",
     "48": "images/icon_48px.png",
@@ -9,9 +9,7 @@
   },
   "version": "1.0",
   "permissions": ["tabs", "scripting", "storage"],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html"
   },
@@ -20,8 +18,13 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["personas/**/*.css", "personas/**/*.js", "personas/**/*.png", "personas/**/*.svg"],
+      "resources": [
+        "personas/**/*.css",
+        "personas/**/*.js",
+        "personas/**/*.png",
+        "personas/**/*.svg"
+      ],
       "matches": ["<all_urls>"]
     }
-  ]  
+  ]
 }

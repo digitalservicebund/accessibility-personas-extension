@@ -100,5 +100,5 @@ function removeHoverEffects() {
 
   posInterval = setInterval(setOffset, shakePositionInterval);
 
-  addStyles("body {filter: blur(.1em) brightness(120%);}"); // Add blur and brightness to simulate vision impairment
+  // addStyles("body {filter: blur(.1em) brightness(120%);}"); // Add blur and brightness to simulate vision impairment
 })();

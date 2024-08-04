@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Simulating accessibility personas",
-  "description": "This extension simulates accessibility personas by altering the style and behavior of the currently active browser tab.",
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
   "icons": {
     "16": "images/icon_16px.png",
     "48": "images/icon_48px.png",

@@ -1,0 +1,131 @@
+{
+  "extensionName": {
+    "message": "Simulating accessibility personas"
+  },
+  "extensionDescription": {
+    "message": "This extension simulates accessibility personas by applying visual effects to web pages."
+  },
+  "popupTitle": {
+    "message": "Simulating accessibility personas"
+  },
+  "popupIntroduction": {
+    "message": "Choose a persona to simulate the experience of a web user with accessibility-related needs."
+  },
+  "resetButton": {
+    "message": "Reset"
+  },
+  "simulateButton": {
+    "message": "Simulate"
+  },
+
+  "ashleighTitle": {
+    "message": "Ashleigh"
+  },
+  "ashleighDescription": {
+    "message": "A severely sight-impaired person with a screen reader."
+  },
+  "ashleighInstructionBlur": {
+    "message": "The current tab's content is now blurred to simulate Ashleigh's sight impairment."
+  },
+  "ashleighInstructionScreenReader": {
+    "message": "<strong>Open a screen reader</strong> on your device to experience how Ashleigh navigates the page."
+  },
+  "ashleighInstructionVoiceOver": {
+    "message": "On Mac, you can use the native screen reader <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> by pressing Cmd + F5."
+  },
+  "ashleighInstructionNarrator": {
+    "message": "On Windows, you can use the native screen reader <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> by pressing the Windows logo key + Ctrl + Enter."
+  },
+  "ashleighLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ashleigh/\" target=\"_blank\" class=\"underline\" >Learn more about Ashleigh</a>"
+  },
+
+  "pawelTitle": {
+    "message": "Pawel"
+  },
+  "pawelDescription": {
+    "message": "An autistic person who is easily distracted when browsing the web."
+  },
+  "pawelInstructionDistractions": {
+    "message": "You'll see images and moving text, simulating Pawel's distractions."
+  },
+  "pawelInstructionExtensions": {
+    "message": "Consider installing additional extensions:"
+  },
+  "pawelInstructionSoundEffects": {
+    "message": "Add sound distractions with <a href=\"https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla\" target=\"_blank\" class=\"underline\">Chrome Sound Effects</a>. Use headphones to hear them loud enough."
+  },
+  "pawelInstructionMidnightLizard": {
+    "message": "Adjust colors in the browser with the <a href=\"https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg\" target=\"_blank\" class=\"underline\">Midnight Lizard</a> extension, which Pawel uses to help him focus."
+  },
+  "pawelLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/pawel/\" target=\"_blank\" class=\"underline\" >Learn more about Pawel</a>"
+  },
+
+  "simoneTitle": {
+    "message": "Simone"
+  },
+  "simoneDescription": {
+    "message": "A dyslexic person who needs more time to understand text and forms."
+  },
+  "simoneInstructionScrambledText": {
+    "message": "The text in the current tab is being scrambled to illustrate Simone's experience with dyslexia."
+  },
+  "simoneInstructionReadParagraphs": {
+    "message": "Try to read paragraphs or navigate forms with this setting. Notice which parts of the page are especially hard to read."
+  },
+  "simoneLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/simone/\" target=\"_blank\" class=\"underline\" >Learn more about Simone</a>"
+  },
+
+  "ronTitle": {
+    "message": "Ron"
+  },
+  "ronDescription": {
+    "message": "An older person with a hand tremor and no assistive tech."
+  },
+  "ronInstructionShakingCursor": {
+    "message": "The cursor is now shaking, simulating Ron's tremor."
+  },
+  "ronInstructionCursorVisibility": {
+    "message": "<strong>Note: If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
+  },
+  "ronLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ron/\" target=\"_blank\" class=\"underline\" >Learn more about Ron</a>"
+  },
+
+  "claudiaTitle": {
+    "message": "Claudia"
+  },
+  "claudiaDescription": {
+    "message": "A sight-impaired person who uses a screen magnifier."
+  },
+  "claudiaInstructionMagnification": {
+    "message": "Claudia needs to magnify the page content to see everything clearly. The current tab is now zoomed in to 200%."
+  },
+  "claudiaInstructionSystemSettings": {
+    "message": "Adjust your system settings to improve the simulation. On Mac, navigate to \"Accessibility > Display\", set your cursor to maximum size and increase contrast to the maximum."
+  },
+  "claudiaLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/claudia/\" target=\"_blank\" class=\"underline\" >Learn more about Claudia</a>"
+  },
+
+  "chrisTitle": {
+    "message": "Chris"
+  },
+  "chrisDescription": {
+    "message": "A person with rheumatoid arthritis who mostly uses his keyboard."
+  },
+  "chrisInstructionColorPerception": {
+    "message": "As Chris does not see colors well, your tab is shown in greyscale. Your mouse cursor is hidden because Chris only uses his keyboard."
+  },
+  "chrisInstructionCursorVisibility": {
+    "message": "<strong>Note: If the cursor is still visible, try moving it to the address bar and back in.</strong>"
+  },
+  "chrisInstructionKeyboardNavigation": {
+    "message": "Put your mouse aside and only use the keyboard to navigate the page. Use the TAB and ENTER keys and pay attention to the order in which elements are selected."
+  },
+  "chrisLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/chris/\" target=\"_blank\" class=\"underline\" >Learn more about Chris</a>"
+  }
+}

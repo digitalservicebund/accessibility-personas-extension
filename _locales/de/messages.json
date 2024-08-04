@@ -1,0 +1,131 @@
+{
+  "extensionName": {
+    "message": "Barrierefreiheit-Personas simulieren"
+  },
+  "extensionDescription": {
+    "message": "Diese Erweiterung simuliert Barrierefreiheit-Personas, indem visuelle Effekte auf Webseiten angewendet werden."
+  },
+  "popupTitle": {
+    "message": "Barrierefreiheit-Personas"
+  },
+  "popupIntroduction": {
+    "message": "Wähle eine Persona aus, um Web-Nutzungserfahrungen mit Behinderungen und Schwierigkeiten zu simulieren."
+  },
+  "resetButton": {
+    "message": "Zurücksetzen"
+  },
+  "simulateButton": {
+    "message": "Simulieren"
+  },
+
+  "ashleighTitle": {
+    "message": "Ashleigh"
+  },
+  "ashleighDescription": {
+    "message": "Eine Person mit starker Sehschwäche, die einen Screenreader verwendet."
+  },
+  "ashleighInstructionBlur": {
+    "message": "Der Inhalt des aktuellen Tabs ist verschwommen, um Ashleighs Sehschwäche zu simulieren."
+  },
+  "ashleighInstructionScreenReader": {
+    "message": "<strong>Öffne einen Screenreader</strong> auf deinem Gerät, um zu erfahren, wie Ashleigh durch die Seite navigiert."
+  },
+  "ashleighInstructionVoiceOver": {
+    "message": "Auf Mac kannst du den nativen Screenreader <a href=\"https://support.apple.com/de-de/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> verwenden, indem du Cmd + F5 drückst."
+  },
+  "ashleighInstructionNarrator": {
+    "message": "Unter Windows kannst du den nativen Screenreader <a href=\"https://support.microsoft.com/de-de/windows/vollstandiger-leitfaden-fur-den-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> verwenden, indem du die Windows-Logo-Taste + Strg + Enter drückst."
+  },
+  "ashleighLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ashleigh/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ashleigh</a>"
+  },
+
+  "pawelTitle": {
+    "message": "Pawel"
+  },
+  "pawelDescription": {
+    "message": "Eine autistische Person, die beim Surfen im Internet leicht abgelenkt wird."
+  },
+  "pawelInstructionDistractions": {
+    "message": "Du siehst Bilder und bewegten Text, die Pawels Ablenkungen simulieren."
+  },
+  "pawelInstructionExtensions": {
+    "message": "So kannst du die Simulation verbessern:"
+  },
+  "pawelInstructionSoundEffects": {
+    "message": "Installiere <a href=\"https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla\" target=\"_blank\" class=\"underline\">Chrome Sound Effects</a>, um Geräusch-Ablenkungen zu simulieren. Verwende Kopfhörer, um sie laut genug zu hören."
+  },
+  "pawelInstructionMidnightLizard": {
+    "message": "Installiere <a href=\"https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg\" target=\"_blank\" class=\"underline\">Midnight Lizard</a> und stelle einen Hochkontrast-Modus ein. Pawel nutzt dies zur besseren Konzentration."
+  },
+  "pawelLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/pawel/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"
+  },
+
+  "simoneTitle": {
+    "message": "Simone"
+  },
+  "simoneDescription": {
+    "message": "Eine Person mit Legasthenie, die mehr Zeit zum Verstehen von Text und Formularen benötigt."
+  },
+  "simoneInstructionScrambledText": {
+    "message": "Der Text im aktuellen Tab wird durcheinandergebracht, um Simones Erfahrung mit Legasthenie zu veranschaulichen."
+  },
+  "simoneInstructionReadParagraphs": {
+    "message": "Achte darauf, welche Abschnitte und Begriffe auf der Seite besonders schwer zu lesen sind."
+  },
+  "simoneLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/simone/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Simone</a>"
+  },
+
+  "ronTitle": {
+    "message": "Ron"
+  },
+  "ronDescription": {
+    "message": "Eine ältere Person mit Handzittern und ohne unterstützende Technologie."
+  },
+  "ronInstructionShakingCursor": {
+    "message": "Der Cursor zittert jetzt und simuliert Rons Tremor."
+  },
+  "ronInstructionCursorVisibility": {
+    "message": "<strong>Hinweis: Wenn der ursprüngliche Cursor noch sichtbar ist, versuche, ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
+  },
+  "ronLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ron/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ron</a>"
+  },
+
+  "claudiaTitle": {
+    "message": "Claudia"
+  },
+  "claudiaDescription": {
+    "message": "Eine sehbehinderte Person, die eine Bildschirmlupe verwendet."
+  },
+  "claudiaInstructionMagnification": {
+    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200% gezoomt."
+  },
+  "claudiaInstructionSystemSettings": {
+    "message": "Passe deine Systemeinstellungen an, um die Simulation zu verbessern. Auf einem Mac kannst du unter \"Bedienungshilfen > Anzeige\", deinen Cursor auf maximale Größe einstellen und den Kontrast auf das Maximum erhöhen."
+  },
+  "claudiaLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/claudia/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"
+  },
+
+  "chrisTitle": {
+    "message": "Chris"
+  },
+  "chrisDescription": {
+    "message": "Eine Person mit rheumatoider Arthritis, die hauptsächlich ihre Tastatur benutzt."
+  },
+  "chrisInstructionColorPerception": {
+    "message": "Da Chris Farben nicht gut sieht, wird dein Tab in Graustufen angezeigt. Dein Mauszeiger ist ausgeblendet, weil Chris nur seine Tastatur benutzt."
+  },
+  "chrisInstructionCursorVisibility": {
+    "message": "<strong>Hinweis: Wenn der Cursor noch sichtbar ist, versuche, ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
+  },
+  "chrisInstructionKeyboardNavigation": {
+    "message": "Lege deine Maus beiseite und verwende nur die Tastatur, um durch die Seite zu navigieren. Benutze die TAB- und ENTER-Tasten und achte auf die Reihenfolge, in der Elemente ausgewählt werden."
+  },
+  "chrisLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/chris/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Chris</a>"
+  }
+}

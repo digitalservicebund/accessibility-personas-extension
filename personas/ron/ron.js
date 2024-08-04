@@ -82,12 +82,31 @@ function removeHoverEffects() {
   removeHoverEffects();
 
   addStyles("body {cursor: none !important;}");
-  addStyles(
-    "#fakeCursor {background-color: black; opacity: 0.8; border-radius: 50%;}"
-  );
-  addStyles(
-    "#fakeCursor {position: absolute !important;z-index: 9999999 !important;width: 21px;height: 21px;pointer-events: none;background-repeat: no-repeat;transition: left 0.05s, top 0.05s;}"
-  );
+  addStyles(`
+     #fakeCursor {
+    position: absolute !important;
+    z-index: 9999999 !important;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+    transition: left 0.05s, top 0.05s;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    color: #000000;
+    text-shadow: 
+      1px 1px 2px #ffffff,
+      -1px 1px 2px #ffffff,
+      1px -1px 2px #ffffff,
+      -1px -1px 2px #ffffff;
+    transform: rotate(-135deg);
+  }
+
+  #fakeCursor::before {
+    content: "➤";
+    display: block;
+  }
+  `);
 
   cursor = document.createElement("div");
 

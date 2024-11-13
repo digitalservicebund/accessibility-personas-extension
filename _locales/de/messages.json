@@ -85,10 +85,10 @@
     "message": "Eine ältere Person mit Handzittern und ohne unterstützende Technologie."
   },
   "ronInstructionShakingCursor": {
-    "message": "Der Cursor zittert jetzt und simuliert Rons Tremor."
+    "message": "Der Mauszeiger zittert jetzt und simuliert Rons Tremor."
   },
   "ronInstructionCursorVisibility": {
-    "message": "<strong>Hinweis: Wenn der ursprüngliche Cursor noch sichtbar ist, versuche, ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
+    "message": "<strong>Hinweis: Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche, ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
   },
   "ronLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ron/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ron</a>"
@@ -104,7 +104,7 @@
     "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200% gezoomt."
   },
   "claudiaInstructionSystemSettings": {
-    "message": "Passe deine Systemeinstellungen an, um die Simulation zu verbessern. Auf einem Mac kannst du unter \"Bedienungshilfen > Anzeige\", deinen Cursor auf maximale Größe einstellen und den Kontrast auf das Maximum erhöhen."
+    "message": "Passe deine Systemeinstellungen an, um die Simulation zu verbessern. Auf einem Mac kannst du unter \"Bedienungshilfen > Anzeige\" deinen Mauszeiger auf die maximale Größe einstellen und den Kontrast auf das Maximum erhöhen."
   },
   "claudiaLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/claudia/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"
@@ -120,7 +120,7 @@
     "message": "Da Chris Farben nicht gut sieht, wird dein Tab in Graustufen angezeigt. Dein Mauszeiger ist ausgeblendet, weil Chris nur seine Tastatur benutzt."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "<strong>Hinweis: Wenn der Cursor noch sichtbar ist, versuche, ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
+    "message": "<strong>Hinweis: Wenn der Mauszeiger noch sichtbar ist, versuche, ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Lege deine Maus beiseite und verwende nur die Tastatur, um durch die Seite zu navigieren. Benutze die TAB- und ENTER-Tasten und achte auf die Reihenfolge, in der Elemente ausgewählt werden."

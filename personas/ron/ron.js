@@ -1,6 +1,6 @@
 // adapted from https://github.com/alphagov/accessibility-personas
 
-let shakeSpeed = 40;
+let shakeSpeed = 20;
 let shakePositionInterval = 250;
 
 let cursor,

@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.4"
+  },
+  "scripts": {
+    "start": "npx tailwindcss -i popup_input.css -o popup_output.css --watch"
   }
 }

@@ -58,9 +58,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
 });
 
-//
-chrome.runtime.onMessage.addListener();
-
 // Listen for tab updates, and re-insert the CSS and JS files if necessary
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "loading") {

@@ -120,7 +120,7 @@ const createPersonaElement = function (persona) {
 
   // Give the "simulate" button all necessary attributes so that
   // the correct simulation is started later
-  let simulateBtnAttributes = `class="select-persona font-semibold bg-slate-800 rounded-lg text-white px-4 py-2 hover:bg-slate-900 active:bg-slate-700" persona-name="${persona.name}"`;
+  let simulateBtnAttributes = `class="select-persona font-semibold bg-slate-800 rounded-lg text-white px-4 py-2" persona-name="${persona.name}"`;
   if (persona.files.css) {
     simulateBtnAttributes += ` data-css="personas/${persona.name}/${persona.name}.css"`;
   }

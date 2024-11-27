@@ -14,3 +14,12 @@ body {
   width: 60px;
   height: auto;
 }
+
+@layer components {
+  button:focus {
+    @apply outline-none ring ring-focus rounded-md bg-focus-bg text-black;
+  }
+  a:focus {
+    @apply outline-none bg-focus-bg text-black;
+  }
+}

@@ -113,9 +113,9 @@ const translateContent = function (obj) {
 
 // Function to generate a single persona element in the list
 const createPersonaElement = function (persona) {
-  const personaDiv = document.createElement("div");
-  personaDiv.className = "persona p-4 bg-slate-200 m-4 rounded-md";
-  personaDiv.setAttribute("persona-name", persona.name);
+  const personaSection = document.createElement("section");
+  personaSection.className = "persona p-4 bg-slate-200 m-4 rounded-md";
+  personaSection.setAttribute("persona-name", persona.name);
   const simulateBtnText = translateContent("simulateButton");
 
   // Give the "simulate" button all necessary attributes so that
@@ -129,13 +129,13 @@ const createPersonaElement = function (persona) {
   }
 
   // Create the HTML for the persona element
-  personaDiv.innerHTML = `
+  personaSection.innerHTML = `
     <h2 class="text-lg font-semibold">${persona.title}</h2>
     <div class="mb-1">
       <div class="flex items-center py-2">
         <img src="personas/${persona.name}/${persona.name}.png" alt="${
     persona.title
-  }" />
+  } persona image" aria-hidden="true"/>
         <p class="persona-description text-base mx-4">${persona.description}</p>
         <button
           ${simulateBtnAttributes}"
@@ -154,7 +154,7 @@ const createPersonaElement = function (persona) {
     </div>
   `;
 
-  return personaDiv;
+  return personaSection;
 };
 
 // Function to build the entire popup

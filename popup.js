@@ -87,6 +87,10 @@ const isChromeAvailable =
   chrome.i18n.getMessage &&
   chrome.storage;
 
+// Set html lang attribute based on browser language
+const userLang = isChromeAvailable ? chrome.i18n.getUILanguage() : "en";
+document.documentElement.lang = userLang;
+
 // Function to look up the i18n messages later for the correct locale
 const translateContent = function (obj) {
   // For local testing, just return keys

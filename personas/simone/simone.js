@@ -41,7 +41,7 @@
       walkNodeTree(root, {
         inspect: (n) => !["STYLE", "SCRIPT"].includes(n.nodeName),
         collect: (n) => n.nodeType === Node.TEXT_NODE,
-      })
+      }),
     );
   }
 

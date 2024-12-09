@@ -134,8 +134,8 @@ const createPersonaElement = function (persona) {
     <div class="mb-1">
       <div class="flex items-center py-2">
         <img src="personas/${persona.name}/${persona.name}.png" alt="${
-    persona.title
-  } persona image" aria-hidden="true"/>
+          persona.title
+        } persona image" aria-hidden="true"/>
         <p class="persona-description text-base mx-4">${persona.description}</p>
         <button
           ${simulateBtnAttributes}"
@@ -183,13 +183,13 @@ function formatPopup(personaName = null) {
 
     // Hide the activation button for the selected persona
     const activationButton = document.querySelector(
-      `.select-persona[persona-name="${selectedPersonaName}"]`
+      `.select-persona[persona-name="${selectedPersonaName}"]`,
     );
     if (activationButton) activationButton.style.display = "none";
 
     // Show the instructions for the selected persona
     const instructionsElement = document.querySelector(
-      `.instructions[persona-name="${selectedPersonaName}"]`
+      `.instructions[persona-name="${selectedPersonaName}"]`,
     );
     if (instructionsElement) instructionsElement.style.display = "block";
 

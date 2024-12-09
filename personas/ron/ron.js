@@ -35,7 +35,7 @@ function mousemoveHandler(e) {
 function elementClickHandler(e) {
   const fakeClickedElement = document.elementFromPoint(
     viewportPosX,
-    viewportPosY
+    viewportPosY,
   );
 
   // If the fake cursor and invisible default cursor are over the same element,

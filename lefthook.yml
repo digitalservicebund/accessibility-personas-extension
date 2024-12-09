@@ -1,0 +1,6 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      tags: style
+      run: npm run format:check

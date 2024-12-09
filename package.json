@@ -1,8 +1,13 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.4"
-  },
+  "name": "accessibility-personas-extension",
   "scripts": {
-    "start": "npx tailwindcss -i popup_input.css -o popup_output.css --watch"
+    "start": "npx tailwindcss -i popup_input.css -o popup_output.css --watch",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write --ignore-unknown ."
+  },
+  "devDependencies": {
+    "lefthook": "^1.9.0",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.4"
   }
 }

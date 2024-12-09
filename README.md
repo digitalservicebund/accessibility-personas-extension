@@ -23,3 +23,16 @@ For some personas, you will need to install additional extensions at this point,
 4. Select "Load unpacked" and select the folder you downloaded from here.
 
 5. Pin the extension (📍) to keep it visible.
+
+## Development
+
+Install the project dependencies once using `npm`. To do that, [Node.js](https://nodejs.org/en) needs to be installed on your machine. We recommend to use a version manager to handle Node.js versions, [asdf](https://asdf-vm.com/guide/getting-started.html) with the [asdf-nodejs](https://github.com/asdf-vm/asdf-nodejs/) plugin, for example.
+
+```bash
+npm install
+```
+
+### Verify that your code changes are correctly formatted
+
+By running `npm run format:check` and afterwards `npm run format:fix` to auto format your code changes with [Prettier](https://prettier.io/).
+A `pre-commit` [lefthook](https://github.com/evilmartians/lefthook) Git hook will take care of checking your code before you can push it.

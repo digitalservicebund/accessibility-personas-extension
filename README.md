@@ -32,7 +32,13 @@ Install the project dependencies once using `npm`. To do that, [Node.js](https:/
 npm install
 ```
 
+Additionally, we use [lefthook](https://github.com/evilmartians/lefthook) Git hooks which can be installed with brew:
+
+```sh
+brew install lefthook
+```
+
 ### Verify that your code changes are correctly formatted
 
 By running `npm run format:check` and afterwards `npm run format:fix` to auto format your code changes with [Prettier](https://prettier.io/).
-A `pre-commit` [lefthook](https://github.com/evilmartians/lefthook) Git hook will take care of checking your code before you can push it.
+A `pre-commit` lefthook Git hook will take care of checking your code before you can push it.

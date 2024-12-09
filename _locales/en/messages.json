@@ -69,7 +69,7 @@
     "message": "A dyslexic person who needs more time to understand text and forms."
   },
   "simoneInstructionScrambledText": {
-    "message": "The text in the current tab is being scrambled to illustrate Simone's experience with dyslexia."
+    "message": "The text in the current tab is being scrambled to simulate Simone's experience with dyslexia."
   },
   "simoneInstructionReadParagraphs": {
     "message": "Try to read paragraphs or navigate forms with this setting. Notice which parts of the page are especially hard to read."
@@ -82,7 +82,7 @@
     "message": "Ron"
   },
   "ronDescription": {
-    "message": "An older person with a hand tremor and no assistive tech."
+    "message": "An older person with a hand tremor and no assistive technology."
   },
   "ronInstructionShakingCursor": {
     "message": "The cursor is now shaking, simulating Ron's tremor."
@@ -104,7 +104,7 @@
     "message": "Claudia needs to magnify the page content to see everything clearly. The current tab is now zoomed in to 200%."
   },
   "claudiaInstructionSystemSettings": {
-    "message": "Adjust your system settings to improve the simulation. On Mac, navigate to \"Accessibility > Display\", set your cursor to maximum size and increase contrast to the maximum."
+    "message": "Adjust your system settings to improve the simulation. On Mac, navigate to “Accessibility > Display”, set your cursor to maximum size and increase contrast to the maximum."
   },
   "claudiaLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/claudia/\" target=\"_blank\" class=\"underline\" >Learn more about Claudia</a>"
@@ -117,7 +117,7 @@
     "message": "A person with rheumatoid arthritis who mostly uses his keyboard."
   },
   "chrisInstructionColorPerception": {
-    "message": "As Chris does not see colors well, your tab is shown in greyscale. Your mouse cursor is hidden because Chris only uses his keyboard."
+    "message": "Because Chris has trouble seeing colors, your tab is shown in grayscale. The mouse cursor is hidden since Chris uses the keyboard for navigation."
   },
   "chrisInstructionCursorVisibility": {
     "message": "<strong>Note: If the cursor is still visible, try moving it to the address bar and back in.</strong>"

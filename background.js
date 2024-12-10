@@ -26,11 +26,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
       }
 
-      // Workaround:
-      // If the persona is Claudia, set Chrome's zoom to 200%
-      // For now, this lives here to ensure access to the chrome.tabs API
+      // Workaround for simulations that need the chrome.tabs API:
+
+      // Claudia: Set tab zoom to 200%
       if (personaName === "claudia") {
         chrome.tabs.setZoom(tabId, 2.0);
+      }
+      // Saleem: Mute tab
+      else if (personaName === "saleem") {
+        chrome.tabs.update(tabId, { muted: true });
       }
     });
   } else if (request.action == "resetSimulation") {
@@ -42,6 +46,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
       // Reset the zoom level
       chrome.tabs.setZoom(currentTabId, 0);
+
+      // Unmute the tab
+      chrome.tabs.update(currentTabId, { muted: false });
 
       // Open a new tab with the same URL
       chrome.tabs.create({ url: currentTabUrl }, (newTab) => {

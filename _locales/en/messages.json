@@ -127,5 +127,21 @@
   },
   "chrisLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/chris/\" target=\"_blank\" class=\"underline\" >Learn more about Chris</a>"
+  },
+
+  "saleemTitle": {
+    "message": "Saleem"
+  },
+  "saleemDescription": {
+    "message": "A deaf person whose main language is German Sign Language."
+  },
+  "saleemInstructionMute": {
+    "message": "The current tab is now muted to simulate Saleem's experience with profound deafness."
+  },
+  "saleemInstructionVideo": {
+    "message": "Check if videos have descriptive captions or at least transcripts. It's easiest for Saleem to receive information in German Sign Language. See if this is an option on the website you're using."
+  },
+  "saleemLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/saleem\" target=\"_blank\" class=\"underline\" >Learn more about Saleem</a>"
   }
 }

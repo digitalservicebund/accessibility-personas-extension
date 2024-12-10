@@ -127,5 +127,21 @@
   },
   "chrisLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/chris/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Chris</a>"
+  },
+
+  "saleemTitle": {
+    "message": "Saleem"
+  },
+  "saleemDescription": {
+    "message": "Eine gehörlose Person, deren Muttersprache die deutsche Gebärdensprache ist."
+  },
+  "saleemInstructionMute": {
+    "message": "Der aktuelle Tab ist jetzt stummgeschaltet, um Saleems Gehörlosigkeit zu simulieren."
+  },
+  "saleemInstructionVideo": {
+    "message": "Prüfe, ob Videos beschreibende Untertitel oder zumindest Transkripte haben. Für Saleem ist es am einfachsten, Informationen in Deutscher Gebärdensprache zu erhalten. Schaue nach, ob dies eine Option auf der aktuellen Website ist."
+  },
+  "saleemLearnMore": {
+    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/saleem\" target=\"_blank\" class=\"underline\" >Erfahre mehr über Saleem</a>"
   }
 }

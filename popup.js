@@ -75,6 +75,17 @@ const popupContent = {
         "chrisLearnMore",
       ],
     },
+    {
+      name: "saleem",
+      title: "saleemTitle",
+      description: "saleemDescription",
+      files: { css: false, js: false },
+      instructions: [
+        "saleemInstructionMute",
+        "saleemInstructionVideo",
+        "saleemLearnMore",
+      ],
+    },
   ],
 };
 

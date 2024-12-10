@@ -40,5 +40,9 @@ brew install lefthook
 
 ### Verify that your code changes are correctly formatted
 
-By running `npm run format:check` and afterwards `npm run format:fix` to auto format your code changes with [Prettier](https://prettier.io/).
+Run `npm run format:check` and afterwards `npm run format:fix` to auto format your code changes with [Prettier](https://prettier.io/).
 A `pre-commit` lefthook Git hook will take care of checking your code before you can push it.
+
+### Build CSS with Tailwind
+
+Use `npm run tailwind` to build the CSS file and watch for changes.

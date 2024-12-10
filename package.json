@@ -1,7 +1,7 @@
 {
   "name": "accessibility-personas-extension",
   "scripts": {
-    "start": "npx tailwindcss -i popup_input.css -o popup_output.css --watch",
+    "tailwind": "npx tailwindcss -i popup_input.css -o popup_output.css --watch",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write --ignore-unknown ."
   },

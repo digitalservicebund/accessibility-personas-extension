@@ -1,15 +1,8 @@
-// ==UserScript==
-// @name         Distractions
-// @namespace    https://github.com/alphagov/accessibility-personas
-// @version      1.0.0
-// @license      ISC
-// @author       Metamatrix AB [https://github.com/Metamatrix/web-disability-simulator] and Crown Copyright (Government Digital Service)
-// @description  Clutter the screen with various distractions to simulate finding it hard to concentrate; has to be used together with distractions.user.css to work
-// @homepageURL  https://alphagov.github.io/accessibility-personas/
-// @include      *
-// @grant        none
-// @nocompat     Chrome
-// ==/UserScript==
+/**
+ * Original Author(s): Crown Copyright (Government Digital Service)
+ * Source: https://github.com/alphagov/accessibility-personas
+ * License: MIT
+ */
 
 //dom elements to apply animations on
 const h2 = "h2";
@@ -53,15 +46,13 @@ const textAnimation_4 = "wds-text-animation-4";
     createElement("span", `wds-text-element-${index}`, text);
   }
 
-  const texts = [
-    "Did I eat lunch?",
-    "I have to get back to work soon...",
-    "The ventilation sounds a lot today. bzzzzzz",
-    "Should I answer that text message?",
-    "Must concentrate, must concentrate, must concentrate",
-  ];
-
-  texts.forEach(createTextElements);
+  [
+    chrome.i18n.getMessage("pawelMessage01"),
+    chrome.i18n.getMessage("pawelMessage02"),
+    chrome.i18n.getMessage("pawelMessage03"),
+    chrome.i18n.getMessage("pawelMessage04"),
+    chrome.i18n.getMessage("pawelMessage05"),
+  ].forEach(createTextElements);
 
   function addClass(element, classname) {
     const el = document.querySelectorAll(element);

@@ -61,6 +61,21 @@
   "pawelLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/pawel/\" target=\"_blank\" class=\"underline\" >Learn more about Pawel</a>"
   },
+  "pawelMessage01": {
+    "message": "Did I eat lunch?"
+  },
+  "pawelMessage02": {
+    "message": "I have to get back to work soon..."
+  },
+  "pawelMessage03": {
+    "message": "The ventilation sounds a lot today. bzzzzzz"
+  },
+  "pawelMessage04": {
+    "message": "Should I answer that text message?"
+  },
+  "pawelMessage05": {
+    "message": "Must concentrate, must concentrate, must concentrate"
+  },
 
   "simoneTitle": {
     "message": "Simone"

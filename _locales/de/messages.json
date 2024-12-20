@@ -154,7 +154,7 @@
     "message": "Der aktuelle Tab ist jetzt stummgeschaltet, um Saleems Gehörlosigkeit zu simulieren."
   },
   "saleemInstructionVideo": {
-    "message": "Prüfe, ob Videos aussagekräftige Untertitel oder Transkripte haben. Für Saleem ist es am einfachsten, Informationen in Deutscher Gebärdensprache zu erhalten. Schaue nach, ob dies eine Option auf der aktuellen Website ist."
+    "message": "Prüfe, ob Videos aussagekräftige Untertitel oder Transkripte haben. Für Saleem ist es am einfachsten, Informationen in Deutscher Gebärdensprache (DGS) zu erhalten. Schaue nach, ob es verschiedene Kontaktmöglichkeiten oder einen Dolmetschenden-Service in DGS gibt."
   },
   "saleemLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/saleem\" target=\"_blank\" class=\"underline\" >Erfahre mehr über Saleem</a>"

@@ -154,7 +154,7 @@
     "message": "The current tab is now muted to simulate Saleem's experience with profound deafness."
   },
   "saleemInstructionVideo": {
-    "message": "Check if videos have descriptive captions or transcripts. It's easiest for Saleem to receive information in German Sign Language. See if this is an option on the website you're using."
+    "message": "Check if videos have descriptive captions or transcripts. It's easiest for Saleem to receive information in British Sign Language (BSL). Check if the website provides different contacting options or offers a relay service in BSL."
   },
   "saleemLearnMore": {
     "message": "<a href=\"https://alphagov.github.io/accessibility-personas/saleem\" target=\"_blank\" class=\"underline\" >Learn more about Saleem</a>"

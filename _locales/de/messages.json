@@ -30,10 +30,10 @@
   "ashleighInstructionScreenReader": {
     "message": "<strong>Öffne einen Screenreader</strong> auf Deinem Gerät, um zu erfahren, wie Ashleigh durch die Seite navigiert."
   },
-  "ashleighInstructionVoiceOver": {
+  "ashleighInstructionScreenReaderMac": {
     "message": "Auf Mac kannst Du den intergrierten Screenreader <a href=\"https://support.apple.com/de-de/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> verwenden, indem Du Cmd + F5 drückst."
   },
-  "ashleighInstructionNarrator": {
+  "ashleighInstructionScreenReaderWindows": {
     "message": "Unter Windows kannst Du den intergrierten Screenreader <a href=\"https://support.microsoft.com/de-de/windows/vollstandiger-leitfaden-fur-den-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> verwenden, indem Du die Windows-Logo-Taste + Strg + Enter drückst."
   },
   "ashleighLearnMore": {
@@ -118,8 +118,11 @@
   "claudiaInstructionMagnification": {
     "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % gezoomt."
   },
-  "claudiaInstructionSystemSettings": {
+  "claudiaInstructionSystemSettingsMac": {
     "message": "Passe Deine Systemeinstellungen an, um die Simulation zu verbessern. Auf einem Mac kannst Du unter „Bedienungshilfen > Anzeige“ Deinen Mauszeiger auf die maximale Größe einstellen und den Kontrast auf das Maximum erhöhen."
+  },
+  "claudiaInstructionSystemSettingsWindows": {
+    "message": "Passe Deine Systemeinstellungen an, um die Simulation zu verbessern. Auf Windows kannst Du unter „Barrierefreiheit > Mauszeiger und Fingerbewegung“ Deinen Mauszeiger auf die maximale Größe einstellen. Erhöhe außerdem den Bildschirmkontrast unter „Barrierefreiheit > Kontrastdesigns“."
   },
   "claudiaLearnMore": {
     "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"

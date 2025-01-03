@@ -1,3 +1,19 @@
+// Get operating system to adjust some instructions
+const getOperatingSystem = () => {
+  try {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes("mac")) {
+      return "mac";
+    } else if (userAgent.includes("windows")) {
+      return "windows";
+    } else return "other";
+  } catch {
+    return "unknown";
+  }
+};
+
+const operatingSystem = getOperatingSystem();
+
 // Popup content containing the message keys for i18n
 const popupContent = {
   title: "popupTitle",
@@ -12,8 +28,9 @@ const popupContent = {
       instructions: [
         "ashleighInstructionBlur",
         "ashleighInstructionScreenReader",
-        "ashleighInstructionVoiceOver",
-        "ashleighInstructionNarrator",
+        ...(operatingSystem === "mac"
+          ? ["ashleighInstructionScreenReaderMac"]
+          : ["ashleighInstructionScreenReaderWindows"]),
         "ashleighLearnMore",
       ],
     },
@@ -59,7 +76,9 @@ const popupContent = {
       files: { css: false, js: false },
       instructions: [
         "claudiaInstructionMagnification",
-        "claudiaInstructionSystemSettings",
+        ...(operatingSystem === "mac"
+          ? ["claudiaInstructionSystemSettingsMac"]
+          : ["claudiaInstructionSystemSettingsWindows"]),
         "claudiaLearnMore",
       ],
     },

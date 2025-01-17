@@ -2,3 +2,8 @@ body {
   cursor: none !important;
   filter: grayscale(1) !important;
 }
+
+*,
+html {
+  cursor: none !important;
+}

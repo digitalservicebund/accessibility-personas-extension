@@ -28,9 +28,9 @@ const popupContent = {
       instructions: [
         "ashleighInstructionBlur",
         "ashleighInstructionScreenReader",
-        ...(operatingSystem === "mac"
-          ? ["ashleighInstructionScreenReaderMac"]
-          : ["ashleighInstructionScreenReaderWindows"]),
+        operatingSystem === "mac"
+          ? "ashleighInstructionScreenReaderMac"
+          : "ashleighInstructionScreenReaderWindows",
         "ashleighLearnMore",
       ],
     },
@@ -76,9 +76,9 @@ const popupContent = {
       files: { css: false, js: false },
       instructions: [
         "claudiaInstructionMagnification",
-        ...(operatingSystem === "mac"
-          ? ["claudiaInstructionSystemSettingsMac"]
-          : ["claudiaInstructionSystemSettingsWindows"]),
+        operatingSystem === "mac"
+          ? "claudiaInstructionSystemSettingsMac"
+          : "claudiaInstructionSystemSettingsWindows",
         "claudiaLearnMore",
       ],
     },
@@ -294,5 +294,12 @@ document.querySelectorAll(".select-persona").forEach((button) => {
 document.getElementById("reset-button").addEventListener("click", function () {
   if (isChromeAvailable) {
     chrome.runtime.sendMessage({ action: "resetSimulation" });
+  }
+});
+
+// Close popup if requested in background.js
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "closePopup") {
+    window.close();
   }
 });

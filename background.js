@@ -12,6 +12,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       // Store the relevant file names in local storage
       chrome.storage.local.set({ [tabId]: { cssFile, jsFile, personaName } });
 
+      chrome.runtime.sendMessage({ action: "closePopup" });
+
       // Insert the CSS and JS files as applicable
       if (cssFile) {
         chrome.scripting.insertCSS({
@@ -36,6 +38,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       else if (personaName === "saleem") {
         chrome.tabs.update(tabId, { muted: true });
       }
+
+      // Show popup again
+      setTimeout(() => {
+        chrome.tabs.get(tabId, (tab) => {
+          chrome.windows.update(tab.windowId, { focused: true });
+          chrome.action.openPopup({ windowId: tab.windowId });
+        });
+      }, 200);
     });
   } else if (request.action == "resetSimulation") {
     // Reset the simulation by closing the current tab and opening a new one

@@ -12,6 +12,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       // Store the relevant file names in local storage
       chrome.storage.local.set({ [tabId]: { cssFile, jsFile, personaName } });
 
+      // Close
       chrome.runtime.sendMessage({ action: "closePopup" });
 
       // Insert the CSS and JS files as applicable
@@ -39,13 +40,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         chrome.tabs.update(tabId, { muted: true });
       }
 
-      // Show popup again
+      // Wait briefly for styles to be applied
       setTimeout(() => {
         chrome.tabs.get(tabId, (tab) => {
+          // Focus window to make sure cursor styles are applied
           chrome.windows.update(tab.windowId, { focused: true });
+          // Open popup again to show instructions
           chrome.action.openPopup({ windowId: tab.windowId });
         });
-      }, 200);
+      }, 300);
     });
   } else if (request.action == "resetSimulation") {
     // Reset the simulation by closing the current tab and opening a new one

@@ -84,7 +84,7 @@
     "message": "A dyslexic person who needs more time to understand text and forms."
   },
   "simoneInstructionScrambledText": {
-    "message": "The text in the current tab is being scrambled to simulate Simone's experience with dyslexia."
+    "message": "The text in the current tab is being scrambled to simulate Simone's experience with dyslexia. A screen ruler helps her read the text. Simone also uses a colored overlay to reduce visual stress. The font is changed to Atkinson Hyperlegible, which is designed to be easier to read for people with dyslexia."
   },
   "simoneInstructionReadParagraphs": {
     "message": "Try to read paragraphs or navigate forms with this setting. Notice which parts of the page are especially hard to read."

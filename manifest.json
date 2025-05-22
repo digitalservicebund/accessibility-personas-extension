@@ -22,7 +22,8 @@
       "resources": [
         "personas/**/*.css",
         "personas/**/*.js",
-        "personas/**/*.png"
+        "personas/**/*.png",
+        "fonts/*.ttf"
       ],
       "matches": ["<all_urls>"]
     }

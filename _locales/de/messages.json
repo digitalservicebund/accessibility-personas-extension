@@ -47,16 +47,7 @@
     "message": "Eine autistische Person, die beim Surfen im Internet leicht abgelenkt wird."
   },
   "pawelInstructionDistractions": {
-    "message": "Du siehst Bilder und bewegten Text, die Pawels Ablenkungen simulieren."
-  },
-  "pawelInstructionExtensions": {
-    "message": "So kannst Du die Simulation verbessern:"
-  },
-  "pawelInstructionSoundEffects": {
-    "message": "Installiere <a href=\"https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla\" target=\"_blank\" class=\"underline\">Chrome Sound Effects</a>, um Geräusch-Ablenkungen zu simulieren. Verwende Kopfhörer, um sie laut genug zu hören."
-  },
-  "pawelInstructionMidnightLizard": {
-    "message": "Installiere <a href=\"https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg\" target=\"_blank\" class=\"underline\">Midnight Lizard</a> und stelle einen Hochkontrast-Modus ein. Pawel kann sich mit Hilfe dieser Erweiterung besser auf Inhalte konzentrieren."
+    "message": "Du siehst bewegte Bilder und Texte, die Pawels Ablenkungen simulieren. Achte darauf, dass dein Ton eingeschaltet ist, um auch akustische Ablenkungen zu hören. Pawel verwendet ein Farbschema, das ihm hilft, sich auf die Inhalte zu konzentrieren."
   },
   "pawelLearnMore": {
     "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"

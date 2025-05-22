@@ -47,16 +47,7 @@
     "message": "An autistic person who is easily distracted when browsing the web."
   },
   "pawelInstructionDistractions": {
-    "message": "You'll see images and moving text, simulating Pawel's distractions."
-  },
-  "pawelInstructionExtensions": {
-    "message": "Consider installing additional extensions:"
-  },
-  "pawelInstructionSoundEffects": {
-    "message": "Add sound distractions with <a href=\"https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla\" target=\"_blank\" class=\"underline\">Chrome Sound Effects</a>. Use headphones to hear them loud enough."
-  },
-  "pawelInstructionMidnightLizard": {
-    "message": "Adjust colors in the browser with the <a href=\"https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg\" target=\"_blank\" class=\"underline\">Midnight Lizard</a> extension, which Pawel uses to help him focus."
+    "message": "You'll see moving text and images, simulating Pawel's distractions. Make sure your sound is turned on to hear audio distractions as well. Pawel uses a color theme that helps him focus on the content."
   },
   "pawelLearnMore": {
     "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers\" target=\"_blank\" class=\"underline\" >Learn more about Pawel</a>"

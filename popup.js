@@ -38,14 +38,8 @@ const popupContent = {
       name: "pawel",
       title: "pawelTitle",
       description: "pawelDescription",
-      files: { css: true, js: true },
-      instructions: [
-        "pawelInstructionDistractions",
-        "pawelInstructionExtensions",
-        "pawelInstructionSoundEffects",
-        "pawelInstructionMidnightLizard",
-        "pawelLearnMore",
-      ],
+      files: { css: false, js: true },
+      instructions: ["pawelInstructionDistractions", "pawelLearnMore"],
     },
     {
       name: "simone",

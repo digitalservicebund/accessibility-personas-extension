@@ -116,13 +116,13 @@
     "message": "Eine sehbehinderte Person, die eine Bildschirmlupe verwendet."
   },
   "claudiaInstructionMagnification": {
-    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % gezoomt."
+    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % gezoomt. Es ist außerdem ein Hochkontrastmodus eingestellt."
   },
   "claudiaInstructionSystemSettingsMac": {
-    "message": "Passe Deine Systemeinstellungen an, um die Simulation zu verbessern. Auf einem Mac kannst Du unter „Bedienungshilfen > Anzeige“ Deinen Mauszeiger auf die maximale Größe einstellen und den Kontrast auf das Maximum erhöhen."
+    "message": "Stelle Deinen Mauszeiger auf die maximale Größe ein, um die Simulation zu verbessern. Gehe dazu in den Systemeinstellungen zum Menüpunkt „Bedienungshilfen > Anzeige“."
   },
   "claudiaInstructionSystemSettingsWindows": {
-    "message": "Passe Deine Systemeinstellungen an, um die Simulation zu verbessern. Auf Windows kannst Du unter „Barrierefreiheit > Mauszeiger und Fingerbewegung“ Deinen Mauszeiger auf die maximale Größe einstellen. Erhöhe außerdem den Bildschirmkontrast unter „Barrierefreiheit > Kontrastdesigns“."
+    "message": "Stelle Deinen Mauszeiger auf die maximale Größe ein, um die Simulation zu verbessern. Gehe dazu in den Systemeinstellungen zum Menüpunkt „Barrierefreiheit > Mauszeiger und Fingerbewegung“."
   },
   "claudiaLearnMore": {
     "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"

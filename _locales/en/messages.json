@@ -116,13 +116,13 @@
     "message": "A sight-impaired person who uses a screen magnifier."
   },
   "claudiaInstructionMagnification": {
-    "message": "Claudia needs to magnify the page content to see everything clearly. The current tab is now zoomed in to 200%."
+    "message": "Claudia needs to magnify the page content to see everything clearly. The current tab is now zoomed in to 200%. A high contrast mode is also set."
   },
   "claudiaInstructionSystemSettingsMac": {
-    "message": "Adjust your system settings to improve the simulation. On Mac, navigate to “Accessibility > Display”, set your cursor to maximum size and increase contrast to the maximum."
+    "message": "Set your mouse cursor to maximum size to improve the simulation. Navigate to “Accessibility > Display” in the system settings."
   },
   "claudiaInstructionSystemSettingsWindows": {
-    "message": "Adjust your system settings to improve the simulation. On Windows, navigate to “Accessibility > Mouse pointer and touch” and set your cursor to maximum size. Choose a high contrast theme from “Accessibility > Contrast themes”."
+    "message": "Set your mouse cursor to maximum size to improve the simulation. Navigate to “Accessibility > Mouse pointer and touch” in the system settings."
   },
   "claudiaLearnMore": {
     "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user\" target=\"_blank\" class=\"underline\" >Learn more about Claudia</a>"

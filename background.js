@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const tabId = request.tabId;
 
     // Insert the CSS and JS files into the current tab
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
       // Store the relevant file names in local storage
       chrome.storage.local.set({ [tabId]: { cssFile, jsFile, personaName } });
 
@@ -29,13 +29,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
       }
 
-      // Workaround for simulations that need the chrome.tabs API:
+      // Workaround for simulations that need access to chrome:
 
-      // Claudia: Set tab zoom to 200%
+      // For persona Claudia: Set tab zoom and contrast mode
       if (personaName === "claudia") {
         chrome.tabs.setZoom(tabId, 2.0);
+        const isAttached = await attachDebugger(tabId, chrome);
+        if (isAttached) {
+          await emulateDarkMode(tabId, true);
+          await emulateForcedColors(tabId, true);
+        }
       }
-      // Saleem: Mute tab
+
+      // For persona Saleem: Mute tab
       else if (personaName === "saleem") {
         chrome.tabs.update(tabId, { muted: true });
       }
@@ -52,15 +58,25 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     });
   } else if (request.action == "resetSimulation") {
     // Reset the simulation by closing the current tab and opening a new one
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.query({ active: true, currentWindow: true }, async (tabs) => {
       const currentTab = tabs[0];
       const currentTabId = currentTab.id;
       const currentTabUrl = currentTab.url;
 
-      // Reset the zoom level
+      // For persona Claudia: Reset the zoom level and detach the debugger
       chrome.tabs.setZoom(currentTabId, 0);
+      try {
+        // Attempt to detach, it won't throw an error if not attached.
+        await chrome.debugger.detach({ tabId: tabId });
+        console.log("Debugger detached on tab removal: " + tabId);
+      } catch (e) {
+        console.warn(
+          "Could not detach debugger on tab removal (might not have been attached):",
+          e,
+        );
+      }
 
-      // Unmute the tab
+      // For persona Saleem: Unmute the tab
       chrome.tabs.update(currentTabId, { muted: false });
 
       // Open a new tab with the same URL
@@ -82,7 +98,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === "loading") {
     // Get the CSS and JS file names from local storage
-    chrome.storage.local.get([tabId.toString()], function (tabData) {
+    chrome.storage.local.get([tabId.toString()], (tabData) => {
       if (tabData[tabId]) {
         const { cssFile, jsFile } = tabData[tabId];
         // Re-insert CSS
@@ -108,3 +124,65 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     });
   }
 });
+
+// Function to attach the debugger to the current active tab
+async function attachDebugger(tabId) {
+  try {
+    await chrome.debugger.attach({ tabId: tabId }, "1.3");
+    console.log("Debugger attached to tab: " + tabId);
+    return true;
+  } catch (error) {
+    console.error("Failed to attach debugger:", error.message);
+    return false;
+  }
+}
+
+// Function to detach the debugger
+async function detachDebugger(tabId) {
+  try {
+    await chrome.debugger.detach({ tabId: tabId });
+    console.log("Debugger detached from tab: " + tabId);
+  } catch (error) {
+    console.error("Failed to detach debugger:", error);
+  }
+}
+
+// Function to emulate prefers-color-scheme: dark
+async function emulateDarkMode(tabId, enabled) {
+  try {
+    await chrome.debugger.sendCommand(
+      { tabId: tabId },
+      "Emulation.setEmulatedMedia",
+      {
+        media: "screen", // Keep other media features as default
+        features: [
+          { name: "prefers-color-scheme", value: enabled ? "dark" : "light" },
+        ],
+      },
+    );
+    console.log(
+      `prefers-color-scheme emulated to: ${enabled ? "dark" : "light"}`,
+    );
+  } catch (error) {
+    console.error("Error emulating dark mode:", error);
+  }
+}
+
+// Function to emulate forced-colors: active
+async function emulateForcedColors(tabId, enabled) {
+  try {
+    await chrome.debugger.sendCommand(
+      { tabId: tabId },
+      "Emulation.setEmulatedMedia",
+      {
+        media: "screen",
+        features: [
+          { name: "forced-colors", value: enabled ? "active" : "none" },
+        ],
+      },
+    );
+    console.log(`forced-colors emulated to: ${enabled ? "active" : "none"}`);
+  } catch (error) {
+    console.error("Error emulating forced colors:", error);
+  }
+}

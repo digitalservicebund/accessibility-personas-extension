@@ -1,0 +1,9 @@
+/**
+ * Make focus more prominent
+ * @author Crown Copyright (Government Digital Service)
+ * @license MIT
+ */
+
+*:focus {
+  outline: 5px solid #c00 !important;
+}

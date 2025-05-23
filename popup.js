@@ -67,7 +67,7 @@ const popupContent = {
       name: "claudia",
       title: "claudiaTitle",
       description: "claudiaDescription",
-      files: { css: false, js: false },
+      files: { css: true, js: false },
       instructions: [
         "claudiaInstructionMagnification",
         operatingSystem === "mac"

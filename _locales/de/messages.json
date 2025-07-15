@@ -37,7 +37,7 @@
     "message": "Unter Windows kannst Du den intergrierten Screenreader <a href=\"https://support.microsoft.com/de-de/windows/vollstandiger-leitfaden-fur-den-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> verwenden, indem Du die Windows-Logo-Taste + Strg + Enter drückst."
   },
   "ashleighLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ashleigh</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ashleigh/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ashleigh</a>"
   },
 
   "pawelTitle": {
@@ -50,7 +50,7 @@
     "message": "Du siehst bewegte Bilder und Texte, die Pawels Ablenkungen simulieren. Achte darauf, dass dein Ton eingeschaltet ist, um auch akustische Ablenkungen zu hören. Pawel verwendet ein Farbschema, das ihm hilft, sich auf die Inhalte zu konzentrieren."
   },
   "pawelLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/pawel/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"
   },
   "pawelMessage01": {
     "message": "Habe ich zu Mittag gegessen?"
@@ -81,7 +81,7 @@
     "message": "Achte darauf, welche Abschnitte und Begriffe auf der Seite besonders schwer zu lesen sind."
   },
   "simoneLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/simone-dyslexic-user\" target=\"_blank\" class=\"underline\">Erfahre mehr über Simone</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/simone/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Simone</a>"
   },
 
   "ronTitle": {
@@ -97,7 +97,7 @@
     "message": "<strong>Hinweis: Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
   },
   "ronLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ron-older-user-with-multiple-conditions\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ron</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ron/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ron</a>"
   },
 
   "claudiaTitle": {
@@ -116,7 +116,7 @@
     "message": "Stelle Deinen Mauszeiger auf die maximale Größe ein, um die Simulation zu verbessern. Gehe dazu in den Systemeinstellungen zum Menüpunkt „Barrierefreiheit > Mauszeiger und Fingerbewegung“."
   },
   "claudiaLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/claudia/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"
   },
 
   "chrisTitle": {
@@ -135,7 +135,7 @@
     "message": "Lege deine Maus beiseite und verwende zur Navigation auf der Seite nur die Tastatur. Benutze die TAB- und ENTER-Tasten und achte auf die ausgewählten Elemente und deren Reihenfolge."
   },
   "chrisLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/christopher-user-with-rheumatoid-arthritis\" target=\"_blank\" class=\"underline\">Erfahre mehr über Chris</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/christopher/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Chris</a>"
   },
 
   "saleemTitle": {

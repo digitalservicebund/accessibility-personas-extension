@@ -47,7 +47,7 @@
     "message": "Eine autistische Person, die beim Surfen im Internet leicht abgelenkt wird."
   },
   "pawelInstructionDistractions": {
-    "message": "Du siehst bewegte Bilder und Texte, die Pawels Ablenkungen simulieren. Achte darauf, dass dein Ton eingeschaltet ist, um auch akustische Ablenkungen zu hören. Pawel verwendet ein Farbschema, das ihm hilft, sich auf die Inhalte zu konzentrieren."
+    "message": "Du siehst bewegte Bilder und Texte, die Pawels Ablenkungen simulieren. Achte darauf, dass Dein Ton eingeschaltet ist, um auch akustische Ablenkungen zu hören. Pawel verwendet ein Farbschema, das ihm hilft, sich auf die Inhalte zu konzentrieren."
   },
   "pawelLearnMore": {
     "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/pawel/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"
@@ -107,7 +107,7 @@
     "message": "Eine sehbehinderte Person, die eine Bildschirmlupe verwendet."
   },
   "claudiaInstructionMagnification": {
-    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % gezoomt. Es ist außerdem ein Hochkontrastmodus eingestellt."
+    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % vergrößert. Zusätzlich ist der Hochkontrastmodus aktiviert."
   },
   "claudiaInstructionSystemSettingsMac": {
     "message": "Stelle Deinen Mauszeiger auf die maximale Größe ein, um die Simulation zu verbessern. Gehe dazu in den Systemeinstellungen zum Menüpunkt „Bedienungshilfen > Anzeige“."

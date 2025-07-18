@@ -38,6 +38,7 @@ const popupContent = {
       name: "pawel",
       title: "pawelTitle",
       description: "pawelDescription",
+      warning: "pawelWarning",
       files: { css: false, js: true },
       instructions: ["pawelInstructionDistractions", "pawelLearnMore"],
     },
@@ -151,6 +152,10 @@ const createPersonaElement = function (persona) {
   if (persona.files.js) {
     simulateBtnAttributes += ` data-js="personas/${persona.name}/${persona.name}.js"`;
   }
+  let warningElement = "";
+  if (persona.warning) {
+    warningElement = `<p class="bg-yellow-200 p-3 mt-2 rounded-md">${translateContent(persona.warning)}</p>`;
+  }
 
   // Create the HTML for the persona element
   personaSection.innerHTML = `
@@ -167,6 +172,7 @@ const createPersonaElement = function (persona) {
           ${simulateBtnText}
         </button>
       </div>
+      ${warningElement}
     </div>
     <div
       class="instructions hidden p-4 mt-2 bg-slate-700 rounded-md text-white"

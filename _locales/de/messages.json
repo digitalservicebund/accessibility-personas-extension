@@ -46,6 +46,9 @@
   "pawelDescription": {
     "message": "Eine autistische Person, die beim Surfen im Internet leicht abgelenkt wird."
   },
+  "pawelWarning": {
+    "message": "Bei der Simulation werden laute Töne abgespielt. Bitte achte auf Deine Lautstärke."
+  },
   "pawelInstructionDistractions": {
     "message": "Du siehst bewegte Bilder und Texte, die Pawels Ablenkungen simulieren. Achte darauf, dass Dein Ton eingeschaltet ist, um auch akustische Ablenkungen zu hören. Pawel verwendet ein Farbschema, das ihm hilft, sich auf die Inhalte zu konzentrieren."
   },

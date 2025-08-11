@@ -1,6 +1,6 @@
 {
   "name": "simulating-accessibility-personas",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "scripts": {
     "tailwind": "npx tailwindcss -i popup_input.css -o popup_output.css --watch",
     "clean": "rm -rf dist *.zip",

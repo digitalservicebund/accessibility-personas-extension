@@ -1,3 +1,5 @@
 .DS_Store
 /chrome_webstore
 node_modules/
+*.zip
+/dist

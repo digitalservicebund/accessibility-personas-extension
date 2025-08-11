@@ -1,11 +1,18 @@
 {
-  "name": "accessibility-personas-extension",
+  "name": "simulating-accessibility-personas",
+  "version": "1.0.1",
   "scripts": {
     "tailwind": "npx tailwindcss -i popup_input.css -o popup_output.css --watch",
+    "clean": "rm -rf dist *.zip",
+    "build:css": "tailwindcss -i popup_input.css -o dist/popup_output.css --minify",
+    "build:copy": "cpr _locales dist/_locales && cpr fonts dist/fonts && cpr images dist/images && cpr personas dist/personas && cp 128.png background.js manifest.json popup.html popup.js dist/",
+    "build": "npm run clean && mkdir dist && npm run build:copy && npm run build:css",
+    "zip": "npm run build && (cd dist && zip -r ../${npm_package_name}-v${npm_package_version}.zip .)",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write --ignore-unknown ."
   },
   "devDependencies": {
+    "cpr": "^3.0.1",
     "lefthook": "^1.9.0",
     "prettier": "^3.4.2",
     "tailwindcss": "^3.4.4"

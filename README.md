@@ -1,4 +1,4 @@
-# Simulating accessibility personas
+# Simulating Accessibility Personas
 
 Chrome extension for simulating the [accessibility personas](https://github.com/alphagov/accessibility-personas) that were created by the UK Government Digital Service (GDS) and adapted by Germany's [DigitalService GmbH des Bundes](https://digitalservice.bund.de/). This is a work in progress. Feedback and contributions are welcome.
 
@@ -46,6 +46,46 @@ A `pre-commit` lefthook Git hook will take care of checking your code before you
 ### Build CSS with Tailwind
 
 Use `npm run tailwind` to build the CSS file and watch for changes.
+
+## Release Workflow
+
+This project uses **GitHub Actions** to automate the process of creating a new release. The workflow is triggered whenever a new version tag (e.g., `v1.2.0`) is pushed to the repository.
+
+This automation handles the following:
+
+- Compiling and minifying production assets.
+- Packaging only the necessary extension files into a `dist/` directory.
+- Creating a versioned `.zip` file suitable for uploading to the Chrome Web Store.
+- Publishing a new GitHub Release with the `.zip` file attached as a downloadable asset.
+
+### How to Create a New Release
+
+To publish a new version, follow these steps:
+
+1.  **Ensure your main branch is up-to-date** and all pull requests for the release have been merged.
+2.  **Update the version number.** The version must be updated in two places:
+
+    - `manifest.json`
+    - `package.json`
+
+    This project follows [Semantic Versioning](https://semver.org/) (e.g., `major.minor.patch`).
+
+3.  **Commit the version change.**
+    ```bash
+    git add manifest.json package.json package-lock.json
+    git commit -m "release vX.Y.Z"
+    ```
+    _(Replace `vX.Y.Z` with the new version number)_
+4.  **Create and push the Git tag.** This is the step that will trigger the release workflow.
+    ```bash
+    git tag vX.Y.Z
+    ```
+5.  **Push your commits and the new tag** to the repository.
+    ```bash
+    git push && git push origin vX.Y.Z
+    ```
+
+Once the tag is pushed, the GitHub Action will automatically create and publish the release.
 
 ## Contributing
 

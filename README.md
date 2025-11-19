@@ -63,10 +63,11 @@ This automation handles the following:
 To publish a new version, follow these steps:
 
 1.  **Ensure your main branch is up-to-date** and all pull requests for the release have been merged.
-2.  **Update the version number.** The version must be updated in two places:
+2.  **Update the version number.** The version must be updated in three places:
 
     - `manifest.json`
     - `package.json`
+    - `package-lock.json`
 
     This project follows [Semantic Versioning](https://semver.org/) (e.g., `major.minor.patch`).
 

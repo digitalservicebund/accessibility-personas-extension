@@ -154,7 +154,7 @@ const createPersonaElement = function (persona) {
   }
   let warningElement = "";
   if (persona.warning) {
-    warningElement = `<p class="bg-yellow-200 p-3 mt-2 rounded-md">${translateContent(persona.warning)}</p>`;
+    warningElement = `<p class="warning bg-yellow-200 p-3 mt-2 rounded-md">${translateContent(persona.warning)}</p>`;
   }
 
   // Create the HTML for the persona element
@@ -222,6 +222,15 @@ function formatPopup(personaName = null) {
       `.instructions[persona-name="${selectedPersonaName}"]`,
     );
     if (instructionsElement) instructionsElement.style.display = "block";
+
+    // Hide the warning if there is one (only for Pawel atm)
+    const personaElement = document.querySelector(
+      `.persona[persona-name="${selectedPersonaName}"]`,
+    );
+    if (personaElement) {
+      const warningElement = personaElement.querySelector(".warning");
+      if (warningElement) warningElement.style.display = "none";
+    }
 
     // Hide all non-selected personas
     document.querySelectorAll(".persona").forEach((persona) => {

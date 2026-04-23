@@ -3,7 +3,7 @@
     "message": "Barrierefreiheits-Personas simulieren"
   },
   "extensionDescription": {
-    "message": "Diese Erweiterung simuliert Barrierefreiheits-Personas, indem visuelle Effekte auf Webseiten angewendet werden."
+    "message": "Diese Erweiterung simuliert die Nutzungserfahrungen von Barrierefreiheits-Personas mithilfe visueller Effekte."
   },
   "popupTitle": {
     "message": "Barrierefreiheits-Personas simulieren"
@@ -30,14 +30,14 @@
   "ashleighInstructionScreenReader": {
     "message": "<strong>Öffne einen Screenreader</strong> auf Deinem Gerät, um zu erfahren, wie Ashleigh durch die Seite navigiert."
   },
-  "ashleighInstructionVoiceOver": {
+  "ashleighInstructionScreenReaderMac": {
     "message": "Auf Mac kannst Du den intergrierten Screenreader <a href=\"https://support.apple.com/de-de/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> verwenden, indem Du Cmd + F5 drückst."
   },
-  "ashleighInstructionNarrator": {
+  "ashleighInstructionScreenReaderWindows": {
     "message": "Unter Windows kannst Du den intergrierten Screenreader <a href=\"https://support.microsoft.com/de-de/windows/vollstandiger-leitfaden-fur-den-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> verwenden, indem Du die Windows-Logo-Taste + Strg + Enter drückst."
   },
   "ashleighLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ashleigh/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ashleigh</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ashleigh/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ashleigh</a>"
   },
 
   "pawelTitle": {
@@ -46,20 +46,14 @@
   "pawelDescription": {
     "message": "Eine autistische Person, die beim Surfen im Internet leicht abgelenkt wird."
   },
+  "pawelWarning": {
+    "message": "Bei der Simulation werden laute Töne abgespielt. Bitte achte auf Deine Lautstärke."
+  },
   "pawelInstructionDistractions": {
-    "message": "Du siehst Bilder und bewegten Text, die Pawels Ablenkungen simulieren."
-  },
-  "pawelInstructionExtensions": {
-    "message": "So kannst Du die Simulation verbessern:"
-  },
-  "pawelInstructionSoundEffects": {
-    "message": "Installiere <a href=\"https://chromewebstore.google.com/detail/chrome-sound-effects/oekengelpdnkfopdkkphkmaacfanbnla\" target=\"_blank\" class=\"underline\">Chrome Sound Effects</a>, um Geräusch-Ablenkungen zu simulieren. Verwende Kopfhörer, um sie laut genug zu hören."
-  },
-  "pawelInstructionMidnightLizard": {
-    "message": "Installiere <a href=\"https://chrome.google.com/webstore/detail/midnight-lizard/pbnndmlekkboofhnbonilimejonapojg\" target=\"_blank\" class=\"underline\">Midnight Lizard</a> und stelle einen Hochkontrast-Modus ein. Pawel kann sich mit Hilfe dieser Erweiterung besser auf Inhalte konzentrieren."
+    "message": "Du siehst bewegte Bilder und Texte, die Pawels Ablenkungen simulieren. Achte darauf, dass Dein Ton eingeschaltet ist, um auch akustische Ablenkungen zu hören. Pawel verwendet ein Farbschema, das ihm hilft, sich auf die Inhalte zu konzentrieren."
   },
   "pawelLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/pawel/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/pawel/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Pawel</a>"
   },
   "pawelMessage01": {
     "message": "Habe ich zu Mittag gegessen?"
@@ -84,13 +78,13 @@
     "message": "Eine Person mit Legasthenie, die mehr Zeit zum Verstehen von Text und Formularen benötigt."
   },
   "simoneInstructionScrambledText": {
-    "message": "Der Text im aktuellen Tab wird durcheinandergebracht, um Simones Erfahrung mit Legasthenie zu veranschaulichen."
+    "message": "Der Text im aktuellen Tab wird durcheinandergebracht, um Simones Erfahrung mit Legasthenie zu veranschaulichen. Ein Bildschirmlineal hilft ihr, den Text zu lesen. Simone nutzt außerdem eine farbige Überlagerung, um visuellen Stress zu reduzieren. Die Schriftart ist auf Atkinson Hyperlegible eingestellt, um die Lesbarkeit zu verbessern."
   },
   "simoneInstructionReadParagraphs": {
     "message": "Achte darauf, welche Abschnitte und Begriffe auf der Seite besonders schwer zu lesen sind."
   },
   "simoneLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/simone/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Simone</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/simone/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Simone</a>"
   },
 
   "ronTitle": {
@@ -106,7 +100,7 @@
     "message": "<strong>Hinweis: Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
   },
   "ronLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/ron/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ron</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ron/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Ron</a>"
   },
 
   "claudiaTitle": {
@@ -116,13 +110,16 @@
     "message": "Eine sehbehinderte Person, die eine Bildschirmlupe verwendet."
   },
   "claudiaInstructionMagnification": {
-    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % gezoomt."
+    "message": "Claudia muss den Seiteninhalt vergrößern, um alles deutlich zu sehen. Der aktuelle Tab ist jetzt auf 200 % vergrößert. Zusätzlich ist der Hochkontrastmodus aktiviert."
   },
-  "claudiaInstructionSystemSettings": {
-    "message": "Passe Deine Systemeinstellungen an, um die Simulation zu verbessern. Auf einem Mac kannst Du unter „Bedienungshilfen > Anzeige“ Deinen Mauszeiger auf die maximale Größe einstellen und den Kontrast auf das Maximum erhöhen."
+  "claudiaInstructionSystemSettingsMac": {
+    "message": "Stelle Deinen Mauszeiger auf die maximale Größe ein, um die Simulation zu verbessern. Gehe dazu in den Systemeinstellungen zum Menüpunkt „Bedienungshilfen > Anzeige“."
+  },
+  "claudiaInstructionSystemSettingsWindows": {
+    "message": "Stelle Deinen Mauszeiger auf die maximale Größe ein, um die Simulation zu verbessern. Gehe dazu in den Systemeinstellungen zum Menüpunkt „Barrierefreiheit > Mauszeiger und Fingerbewegung“."
   },
   "claudiaLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/claudia/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/claudia/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Claudia</a>"
   },
 
   "chrisTitle": {
@@ -141,7 +138,7 @@
     "message": "Lege deine Maus beiseite und verwende zur Navigation auf der Seite nur die Tastatur. Benutze die TAB- und ENTER-Tasten und achte auf die ausgewählten Elemente und deren Reihenfolge."
   },
   "chrisLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/chris/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Chris</a>"
+    "message": "<a href=\"https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/christopher/\" target=\"_blank\" class=\"underline\">Erfahre mehr über Chris</a>"
   },
 
   "saleemTitle": {
@@ -154,9 +151,9 @@
     "message": "Der aktuelle Tab ist jetzt stummgeschaltet, um Saleems Gehörlosigkeit zu simulieren."
   },
   "saleemInstructionVideo": {
-    "message": "Prüfe, ob Videos aussagekräftige Untertitel oder Transkripte haben. Für Saleem ist es am einfachsten, Informationen in Deutscher Gebärdensprache zu erhalten. Schaue nach, ob dies eine Option auf der aktuellen Website ist."
+    "message": "Prüfe, ob Videos aussagekräftige Untertitel oder Transkripte haben. Für Saleem ist es am einfachsten, Informationen in Deutscher Gebärdensprache (DGS) zu erhalten. Schaue nach, ob es verschiedene Kontaktmöglichkeiten oder einen Dolmetschenden-Service in DGS gibt."
   },
   "saleemLearnMore": {
-    "message": "<a href=\"https://alphagov.github.io/accessibility-personas/saleem\" target=\"_blank\" class=\"underline\" >Erfahre mehr über Saleem</a>"
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/saleem-profoundly-deaf-user\" target=\"_blank\" class=\"underline\" >Erfahre mehr über Saleem</a>"
   }
 }

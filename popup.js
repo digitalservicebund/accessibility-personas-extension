@@ -1,3 +1,19 @@
+// Get operating system to adjust some instructions
+const getOperatingSystem = () => {
+  try {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (userAgent.includes("mac")) {
+      return "mac";
+    } else if (userAgent.includes("windows")) {
+      return "windows";
+    } else return "other";
+  } catch {
+    return "unknown";
+  }
+};
+
+const operatingSystem = getOperatingSystem();
+
 // Popup content containing the message keys for i18n
 const popupContent = {
   title: "popupTitle",
@@ -12,8 +28,9 @@ const popupContent = {
       instructions: [
         "ashleighInstructionBlur",
         "ashleighInstructionScreenReader",
-        "ashleighInstructionVoiceOver",
-        "ashleighInstructionNarrator",
+        operatingSystem === "mac"
+          ? "ashleighInstructionScreenReaderMac"
+          : "ashleighInstructionScreenReaderWindows",
         "ashleighLearnMore",
       ],
     },
@@ -21,14 +38,9 @@ const popupContent = {
       name: "pawel",
       title: "pawelTitle",
       description: "pawelDescription",
-      files: { css: true, js: true },
-      instructions: [
-        "pawelInstructionDistractions",
-        "pawelInstructionExtensions",
-        "pawelInstructionSoundEffects",
-        "pawelInstructionMidnightLizard",
-        "pawelLearnMore",
-      ],
+      warning: "pawelWarning",
+      files: { css: false, js: true },
+      instructions: ["pawelInstructionDistractions", "pawelLearnMore"],
     },
     {
       name: "simone",
@@ -56,10 +68,12 @@ const popupContent = {
       name: "claudia",
       title: "claudiaTitle",
       description: "claudiaDescription",
-      files: { css: false, js: false },
+      files: { css: true, js: false },
       instructions: [
         "claudiaInstructionMagnification",
-        "claudiaInstructionSystemSettings",
+        operatingSystem === "mac"
+          ? "claudiaInstructionSystemSettingsMac"
+          : "claudiaInstructionSystemSettingsWindows",
         "claudiaLearnMore",
       ],
     },
@@ -138,6 +152,10 @@ const createPersonaElement = function (persona) {
   if (persona.files.js) {
     simulateBtnAttributes += ` data-js="personas/${persona.name}/${persona.name}.js"`;
   }
+  let warningElement = "";
+  if (persona.warning) {
+    warningElement = `<p class="bg-yellow-200 p-3 mt-2 rounded-md">${translateContent(persona.warning)}</p>`;
+  }
 
   // Create the HTML for the persona element
   personaSection.innerHTML = `
@@ -154,6 +172,7 @@ const createPersonaElement = function (persona) {
           ${simulateBtnText}
         </button>
       </div>
+      ${warningElement}
     </div>
     <div
       class="instructions hidden p-4 mt-2 bg-slate-700 rounded-md text-white"
@@ -275,5 +294,12 @@ document.querySelectorAll(".select-persona").forEach((button) => {
 document.getElementById("reset-button").addEventListener("click", function () {
   if (isChromeAvailable) {
     chrome.runtime.sendMessage({ action: "resetSimulation" });
+  }
+});
+
+// Close popup if requested in background.js
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "closePopup") {
+    window.close();
   }
 });

@@ -81,7 +81,14 @@ function removeHoverEffects() {
 
   removeHoverEffects();
 
-  addStyles("body {cursor: none !important;}");
+  addStyles(`
+    html, body {
+      cursor: none !important;
+    }
+    * {
+      cursor: none !important;
+    }
+  `);
   addStyles(`
      #fakeCursor {
     position: absolute !important;

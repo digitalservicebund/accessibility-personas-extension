@@ -8,8 +8,8 @@
     "48": "images/icon_48px.png",
     "128": "images/icon_128px.png"
   },
-  "version": "1.0",
-  "permissions": ["tabs", "scripting", "storage"],
+  "version": "1.1.1",
+  "permissions": ["tabs", "scripting", "storage", "debugger"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html"
@@ -22,7 +22,8 @@
       "resources": [
         "personas/**/*.css",
         "personas/**/*.js",
-        "personas/**/*.png"
+        "personas/**/*.png",
+        "fonts/*.ttf"
       ],
       "matches": ["<all_urls>"]
     }

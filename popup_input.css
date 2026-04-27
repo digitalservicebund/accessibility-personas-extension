@@ -1,12 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@layer theme, base, utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* KERN UX */
+@import "@kern-ux/native/dist/fonts/fira-sans.css" layer(base);
+@import "@kern-ux/native/dist/kern.css" layer(base);
+
+/* Tailwind without preflight (normalize) */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* use the KERN UX theme */
+@import "@digitalservicebund/kern-ux-tailwind-theme/theme.css";
+
+/* disable Tailwind's container */
+@source not inline("container");
+
+@theme {
+  --ring-width-DEFAULT: 2px;
+  --color-focus: #000;
+  --color-focus-bg: #fec32bff;
+}
+
+:root {
+  --kern-typography-font-size-static-medium: var(--kern-font-size-16);
+  --kern-typography-font-size-static-small: var(--kern-font-size-12);
+  --kern-typography-font-size-adaptive-medium: var(--kern-font-size-18);
+}
 
 body {
-  width: 500px;
+  margin: 0;
+  width: 400px;
+}
+
+body > header .kern-title,
+body > header .kern-body {
+  color: var(--kern-color-layout-text-inverse);
+}
+
+body > header .kern-btn--secondary {
+  border-color: var(--kern-color-action-on-default);
+}
+
+body > header .kern-btn--secondary .kern-label {
+  color: var(--kern-color-action-on-default);
 }
 
 .persona img {
@@ -14,11 +49,16 @@ body {
   height: auto;
 }
 
-@layer components {
-  button:focus {
-    @apply outline-none ring ring-focus rounded-md bg-focus-bg text-black;
-  }
-  a:focus {
-    @apply outline-none bg-focus-bg text-black;
-  }
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(--ring-width-DEFAULT) var(--color-focus);
+  border-radius: 0.375rem;
+  background-color: var(--color-focus-bg);
+  color: #000;
+}
+
+a:focus {
+  outline: none;
+  background-color: var(--color-focus-bg);
+  color: #000;
 }

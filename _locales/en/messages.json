@@ -17,6 +17,9 @@
   "simulateButton": {
     "message": "Simulate"
   },
+  "learnMore": {
+    "message": "Learn more about this persona"
+  },
 
   "ashleighTitle": {
     "message": "Ashleigh"
@@ -36,9 +39,6 @@
   "ashleighInstructionScreenReaderWindows": {
     "message": "On Windows, you can use the native screen reader <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> by pressing the Windows logo key + Ctrl + Enter."
   },
-  "ashleighLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user\" target=\"_blank\" class=\"underline\" >Learn more about Ashleigh</a>"
-  },
 
   "pawelTitle": {
     "message": "Pawel"
@@ -46,14 +46,14 @@
   "pawelDescription": {
     "message": "An autistic person who is easily distracted when browsing the web."
   },
+  "warningTitle": {
+    "message": "Warning"
+  },
   "pawelWarning": {
     "message": "Loud sounds will be played during the simulation. Please check your volume."
   },
   "pawelInstructionDistractions": {
     "message": "You'll see moving text and images, simulating Pawel's distractions. Make sure your sound is turned on to hear audio distractions as well. Pawel uses a color theme that helps him focus on the content."
-  },
-  "pawelLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers\" target=\"_blank\" class=\"underline\" >Learn more about Pawel</a>"
   },
   "pawelMessage01": {
     "message": "Did I eat lunch?"
@@ -83,9 +83,6 @@
   "simoneInstructionReadParagraphs": {
     "message": "Try to read paragraphs or navigate forms with this setting. Notice which parts of the page are especially hard to read."
   },
-  "simoneLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/simone-dyslexic-user\" target=\"_blank\" class=\"underline\" >Learn more about Simone</a>"
-  },
 
   "ronTitle": {
     "message": "Ron"
@@ -98,9 +95,6 @@
   },
   "ronInstructionCursorVisibility": {
     "message": "<strong>Note: If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
-  },
-  "ronLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ron-older-user-with-multiple-conditions\" target=\"_blank\" class=\"underline\" >Learn more about Ron</a>"
   },
 
   "claudiaTitle": {
@@ -118,9 +112,6 @@
   "claudiaInstructionSystemSettingsWindows": {
     "message": "Set your mouse cursor to maximum size to improve the simulation. To do this, go to “Accessibility > Mouse pointer and touch” in the system settings."
   },
-  "claudiaLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user\" target=\"_blank\" class=\"underline\" >Learn more about Claudia</a>"
-  },
 
   "chrisTitle": {
     "message": "Chris"
@@ -137,9 +128,6 @@
   "chrisInstructionKeyboardNavigation": {
     "message": "Put your mouse aside and only use the keyboard to navigate the page. Use the TAB and ENTER keys and pay attention to the order in which elements are selected."
   },
-  "chrisLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/christopher-user-with-rheumatoid-arthritis\" target=\"_blank\" class=\"underline\" >Learn more about Chris</a>"
-  },
 
   "saleemTitle": {
     "message": "Saleem"
@@ -152,8 +140,5 @@
   },
   "saleemInstructionVideo": {
     "message": "Check if videos have descriptive captions or transcripts. It's easiest for Saleem to receive information in British Sign Language (BSL). Check if the website provides different contacting options or offers a relay service in BSL."
-  },
-  "saleemLearnMore": {
-    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/saleem-profoundly-deaf-user\" target=\"_blank\" class=\"underline\" >Learn more about Saleem</a>"
   }
 }

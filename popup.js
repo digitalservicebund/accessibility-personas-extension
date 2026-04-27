@@ -25,13 +25,16 @@ const popupContent = {
       title: "ashleighTitle",
       description: "ashleighDescription",
       files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ashleigh/",
+      },
       instructions: [
         "ashleighInstructionBlur",
         "ashleighInstructionScreenReader",
         operatingSystem === "mac"
           ? "ashleighInstructionScreenReaderMac"
           : "ashleighInstructionScreenReaderWindows",
-        "ashleighLearnMore",
       ],
     },
     {
@@ -40,17 +43,24 @@ const popupContent = {
       description: "pawelDescription",
       warning: "pawelWarning",
       files: { css: false, js: true },
-      instructions: ["pawelInstructionDistractions", "pawelLearnMore"],
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/pawel/",
+      },
+      instructions: ["pawelInstructionDistractions"],
     },
     {
       name: "simone",
       title: "simoneTitle",
       description: "simoneDescription",
       files: { css: false, js: true },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/simone-dyslexic-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/simone/",
+      },
       instructions: [
         "simoneInstructionScrambledText",
         "simoneInstructionReadParagraphs",
-        "simoneLearnMore",
       ],
     },
     {
@@ -58,10 +68,13 @@ const popupContent = {
       title: "ronTitle",
       description: "ronDescription",
       files: { css: false, js: true },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ron-older-user-with-multiple-conditions",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ron/",
+      },
       instructions: [
         "ronInstructionShakingCursor",
         "ronInstructionCursorVisibility",
-        "ronLearnMore",
       ],
     },
     {
@@ -69,12 +82,15 @@ const popupContent = {
       title: "claudiaTitle",
       description: "claudiaDescription",
       files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/claudia/",
+      },
       instructions: [
         "claudiaInstructionMagnification",
         operatingSystem === "mac"
           ? "claudiaInstructionSystemSettingsMac"
           : "claudiaInstructionSystemSettingsWindows",
-        "claudiaLearnMore",
       ],
     },
     {
@@ -82,11 +98,14 @@ const popupContent = {
       title: "chrisTitle",
       description: "chrisDescription",
       files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/christopher-user-with-rheumatoid-arthritis",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/christopher/",
+      },
       instructions: [
         "chrisInstructionColorPerception",
         "chrisInstructionCursorVisibility",
         "chrisInstructionKeyboardNavigation",
-        "chrisLearnMore",
       ],
     },
     {
@@ -94,11 +113,10 @@ const popupContent = {
       title: "saleemTitle",
       description: "saleemDescription",
       files: { css: false, js: false },
-      instructions: [
-        "saleemInstructionMute",
-        "saleemInstructionVideo",
-        "saleemLearnMore",
-      ],
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/saleem-profoundly-deaf-user",
+      },
+      instructions: ["saleemInstructionMute", "saleemInstructionVideo"],
     },
   ],
 };
@@ -138,14 +156,14 @@ const translateContent = function (obj) {
 
 // Function to generate a single persona element in the list
 const createPersonaElement = function (persona) {
-  const personaSection = document.createElement("section");
-  personaSection.className = "persona p-4 bg-slate-200 m-4 rounded-md";
-  personaSection.setAttribute("persona-name", persona.name);
+  const personaCard = document.createElement("article");
+  personaCard.className = "kern-card persona";
+  personaCard.setAttribute("persona-name", persona.name);
   const simulateBtnText = translateContent("simulateButton");
 
   // Give the "simulate" button all necessary attributes so that
   // the correct simulation is started later
-  let simulateBtnAttributes = `class="select-persona font-semibold bg-slate-800 rounded-lg text-white px-4 py-2" persona-name="${persona.name}"`;
+  let simulateBtnAttributes = `class="select-persona kern-btn kern-btn--primary" persona-name="${persona.name}"`;
   if (persona.files.css) {
     simulateBtnAttributes += ` data-css="personas/${persona.name}/${persona.name}.css"`;
   }
@@ -154,47 +172,71 @@ const createPersonaElement = function (persona) {
   }
   let warningElement = "";
   if (persona.warning) {
-    warningElement = `<p class="warning bg-yellow-200 p-3 mt-2 rounded-md">${translateContent(persona.warning)}</p>`;
+    warningElement = `
+      <div class="warning kern-alert kern-alert--warning" role="alert">
+        <div class="kern-alert__header">
+          <span class="kern-icon kern-icon--warning" aria-hidden="true"></span>
+          <span class="kern-title">${translateContent("warningTitle")}</span>
+        </div>
+        <div class="kern-alert__body">
+          <p class="kern-body">${translateContent(persona.warning)}</p>
+        </div>
+      </div>`;
   }
 
   // Create the HTML for the persona element
-  personaSection.innerHTML = `
-    <h2 class="text-lg font-semibold">${persona.title}</h2>
-    <div class="mb-1">
-      <div class="flex items-center py-2">
-        <img src="personas/${persona.name}/${persona.name}.png" alt="${
-          persona.title
-        } persona image" aria-hidden="true"/>
-        <p class="persona-description text-base mx-4">${persona.description}</p>
-        <button
-          ${simulateBtnAttributes}"
+  personaCard.innerHTML = `
+    <div class="kern-card__container">
+      <header class="kern-card__header">
+        <div class="flex items-center justify-between w-full">
+          <hgroup>
+            <h2 class="kern-title">${persona.title}</h2>
+          </hgroup>
+          <img src="personas/${persona.name}/${persona.name}.png" alt="${persona.title} persona image" aria-hidden="true"/>
+        </div>
+      </header>
+      <section class="kern-card__body">
+        <div>
+          <p class="persona-description kern-body">${persona.description}</p>
+        </div>
+        ${warningElement}
+        <div
+          class="instructions hidden"
+          persona-name="${persona.name}"
         >
-          ${simulateBtnText}
-        </button>
-      </div>
-      ${warningElement}
-    </div>
-    <div
-      class="instructions hidden p-4 mt-2 bg-slate-700 rounded-md text-white"
-      persona-name="${persona.name}"
-    >
-      ${persona.instructions
-        .map((instruction) => `<p class="mb-2">${instruction}</p>`)
-        .join("")}
+          ${persona.instructions
+            .map(
+              (instruction) => `<p class="kern-body mb-2">${instruction}</p>`,
+            )
+            .join("")}
+        </div>
+      </section>
+      <footer class="kern-card__footer">
+        <div class="kern-stack-sm w-full">
+          <button ${simulateBtnAttributes}>
+            <span class="kern-label">${simulateBtnText}</span>
+          </button>
+          <a href="${persona.learnMoreLink ? persona.learnMoreLink[userLang] || persona.learnMoreLink[userLang.split("-")[0]] || persona.learnMoreLink.en || "" : ""}" class="kern-btn kern-btn--tertiary learn-more" target="_blank" rel="noopener noreferrer">
+            <span class="kern-label">${translateContent("learnMore")}</span>
+          </a>
+        </div>
+      </footer>
     </div>
   `;
 
-  return personaSection;
+  return personaCard;
 };
 
 // Function to build the entire popup
 const buildPopup = function () {
   const personaList = document.getElementById("persona-list");
 
-  ["popup-title", "popup-introduction", "reset-button"].forEach((elementId) => {
-    const element = document.getElementById(elementId);
-    element.innerText = translateContent(element.dataset.i18n);
-  });
+  ["popup-title", "popup-introduction", "reset-button-label"].forEach(
+    (elementId) => {
+      const element = document.getElementById(elementId);
+      element.innerText = translateContent(element.dataset.i18n);
+    },
+  );
 
   const translatedContent = translateContent(popupContent);
 

@@ -1,0 +1,159 @@
+{
+  "extensionName": {
+    "message": "Simuler des personas d'accessibilité"
+  },
+  "extensionDescription": {
+    "message": "Cette extension applique des effets visuels aux pages web afin de simuler l'expérience de navigation de personnes ayant des besoins en matière d'accessibilité."
+  },
+  "popupTitle": {
+    "message": "Simuler des personas d'accessibilité"
+  },
+  "popupIntroduction": {
+    "message": "Choisissez un persona pour simuler l'expérience d'un utilisateur web ayant des besoins en matière d'accessibilité."
+  },
+  "resetButton": {
+    "message": "Réinitialiser"
+  },
+  "simulateButton": {
+    "message": "Simuler"
+  },
+
+  "ashleighTitle": {
+    "message": "Ashleigh"
+  },
+  "ashleighDescription": {
+    "message": "Une personne aveugle utilisant un lecteur d'écran."
+  },
+  "ashleighInstructionBlur": {
+    "message": "Le contenu de l'onglet actuel est maintenant flouté pour simuler la vision d'Ashleigh."
+  },
+  "ashleighInstructionScreenReader": {
+    "message": "<strong>Ouvrez un lecteur d'écran</strong> sur votre appareil pour vous familiariser avec la façon dont Ashleigh navigue sur la page."
+  },
+  "ashleighInstructionScreenReaderMac": {
+    "message": "Sur Mac, vous pouvez utiliser le lecteur d'écran natif <a href=\"https://support.apple.com/fr-fr/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> en appuyant sur Cmd + F5."
+  },
+  "ashleighInstructionScreenReaderWindows": {
+    "message": "Sur Windows, vous pouvez utiliser le lecteur d'écran natif <a href=\"https://support.microsoft.com/fr-fr/windows/guide-complet-sur-le-narrateur-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> en appuyant sur la touche Windows + Ctrl + Entrée."
+  },
+  "ashleighLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user\" target=\"_blank\" class=\"underline\">En savoir plus sur Ashleigh</a>"
+  },
+
+  "pawelTitle": {
+    "message": "Pawel"
+  },
+  "pawelDescription": {
+    "message": "Une personne autiste facilement distraite lors de la navigation web."
+  },
+  "pawelWarning": {
+    "message": "Des effets sonores seront diffusés pendant la simulation. Veuillez vérifier le volume de votre appareil."
+  },
+  "pawelInstructionDistractions": {
+    "message": "Vous verrez des images et du texte en mouvement, simulant les distractions de Pawel. Assurez-vous que le son est activé pour pouvoir également entendre les effets sonores. Pawel utilise un thème de couleurs qui l'aide à se concentrer sur le contenu."
+  },
+  "pawelLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers\" target=\"_blank\" class=\"underline\">En savoir plus sur Pawel</a>"
+  },
+  "pawelMessage01": {
+    "message": "Ai-je mangé à midi ?"
+  },
+  "pawelMessage02": {
+    "message": "Je dois bientôt reprendre le travail..."
+  },
+  "pawelMessage03": {
+    "message": "La ventilation fait beaucoup de bruit aujourd'hui. Whou-ou-ou-ou..."
+  },
+  "pawelMessage04": {
+    "message": "Dois-je répondre à ce texto ?"
+  },
+  "pawelMessage05": {
+    "message": "je dois me concentrer, je dois me concentrer, je dois me concentrer"
+  },
+
+  "simoneTitle": {
+    "message": "Simone"
+  },
+  "simoneDescription": {
+    "message": "Une personne dyslexique qui a besoin de plus de temps pour comprendre les textes et les formulaires."
+  },
+  "simoneInstructionScrambledText": {
+    "message": "Le texte de l'onglet actuel est brouillé pour illustrer l'expérience de lecture de Simone. Une règle de lecture l'aide à lire le texte. Simone utilise également un filtre de couleur pour réduire la fatigue visuelle. La police a été remplacée par Atkinson Hyperlegible, qui aide les personnes dyslexiques à reconnaître plus facilement les lettres."
+  },
+  "simoneInstructionReadParagraphs": {
+    "message": "Essayez de lire des paragraphes de texte ou de naviguer dans des formulaires avec cette simulation. Remarquez quelles parties de la page sont particulièrement difficiles à lire."
+  },
+  "simoneLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/simone-dyslexic-user\" target=\"_blank\" class=\"underline\">En savoir plus sur Simone</a>"
+  },
+
+  "ronTitle": {
+    "message": "Ron"
+  },
+  "ronDescription": {
+    "message": "Une personne âgée avec un tremblement des mains et n'utilisant pas de technologie d'assistance."
+  },
+  "ronInstructionShakingCursor": {
+    "message": "Le curseur bouge désormais de façon à simuler le tremblement de Ron."
+  },
+  "ronInstructionCursorVisibility": {
+    "message": "<strong>Note : Si le curseur original est toujours visible, essayez de le déplacer vers la barre d'adresse puis de revenir dans l'espace principal de la fenêtre.</strong>"
+  },
+  "ronLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ron-older-user-with-multiple-conditions\" target=\"_blank\" class=\"underline\">En savoir plus sur Ron</a>"
+  },
+
+  "claudiaTitle": {
+    "message": "Claudia"
+  },
+  "claudiaDescription": {
+    "message": "Une personne malvoyante qui utilise une loupe d'écran."
+  },
+  "claudiaInstructionMagnification": {
+    "message": "Claudia a besoin d'agrandir le contenu de la page pour tout voir correctement. L'onglet actuel est maintenant zoomé à 200%. Le mode contraste élevé est activé."
+  },
+  "claudiaInstructionSystemSettingsMac": {
+    "message": "Réglez le curseur de votre souris sur sa taille maximale pour améliorer la simulation. Pour ce faire, rendez-vous dans « Accessibilité > Affichage » dans les paramètres système."
+  },
+  "claudiaInstructionSystemSettingsWindows": {
+    "message": "Réglez le curseur de votre souris sur sa taille maximale pour améliorer la simulation. Pour ce faire, rendez-vous dans « Accessibilité >  Souris et écran tactile » dans les paramètres système."
+  },
+  "claudiaLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user\" target=\"_blank\" class=\"underline\">En savoir plus sur Claudia</a>"
+  },
+
+  "chrisTitle": {
+    "message": "Chris"
+  },
+  "chrisDescription": {
+    "message": "Une personne présentant une polyarthrite rhumatoïde qui utilise principalement son clavier."
+  },
+  "chrisInstructionColorPerception": {
+    "message": "Comme Chris ne voit pas bien les couleurs, votre onglet est affiché en niveaux de gris. Votre curseur de souris est masqué car Chris n'utilise que son clavier."
+  },
+  "chrisInstructionCursorVisibility": {
+    "message": "<strong>Note : Si le curseur est toujours visible, essayez de le déplacer vers la barre d'adresse puis de revenir dans l'espace principal de la fenêtre.</strong>"
+  },
+  "chrisInstructionKeyboardNavigation": {
+    "message": "Mettez votre souris de côté et utilisez uniquement le clavier pour naviguer sur la page. Utilisez les touches TAB et ENTRÉE et prêtez attention à l'ordre dans lequel les éléments sont sélectionnés."
+  },
+  "chrisLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/christopher-user-with-rheumatoid-arthritis\" target=\"_blank\" class=\"underline\">En savoir plus sur Chris</a>"
+  },
+
+  "saleemTitle": {
+    "message": "Saleem"
+  },
+  "saleemDescription": {
+    "message": "Une personne Sourde dont la langue principale est la langue des signes française."
+  },
+  "saleemInstructionMute": {
+    "message": "Le son de l'onglet actuel est maintenant coupé pour simuler l'expérience de Saleem en termes de surdité."
+  },
+  "saleemInstructionVideo": {
+    "message": "Assurez-vous que les vidéos ont des sous-titres ou des transcriptions détaillés. Il est plus facile pour Saleem de recevoir des informations en langue des signes française. Déterminez si cette fonctionnalité est disponible sur le site web que vous utilisez."
+  },
+  "saleemLearnMore": {
+    "message": "<a href=\"https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/saleem-profoundly-deaf-user\" target=\"_blank\" class=\"underline\" >En savoir plus sur Saleem</a>"
+  }
+}

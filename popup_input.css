@@ -67,3 +67,7 @@ a:focus {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+header .kern-title {
+  margin-bottom: 0;
+}

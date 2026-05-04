@@ -12918,14 +12918,8 @@
   .z-10 {
     z-index: 10;
   }
-  .mb-2 {
-    margin-bottom: calc(0.0625rem * 2);
-  }
-  .mb-4 {
-    margin-bottom: calc(0.0625rem * 4);
-  }
-  .mb-12 {
-    margin-bottom: calc(0.0625rem * 12);
+  .mb-6 {
+    margin-bottom: calc(0.0625rem * 6);
   }
   .block {
     display: block;
@@ -12939,18 +12933,39 @@
   .hidden {
     display: none;
   }
+  .inline-flex {
+    display: inline-flex;
+  }
   .w-full {
     width: 100%;
+  }
+  .min-w-0 {
+    min-width: calc(0.0625rem * 0);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,)
       var(--tw-skew-x,) var(--tw-skew-y,);
   }
-  .items-center {
-    align-items: center;
+  .flex-col {
+    flex-direction: column;
   }
-  .justify-between {
-    justify-content: space-between;
+  .items-start {
+    align-items: flex-start;
+  }
+  .gap-4 {
+    gap: calc(0.0625rem * 4);
+  }
+  .gap-8 {
+    gap: calc(0.0625rem * 8);
+  }
+  .gap-16 {
+    gap: calc(0.0625rem * 16);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -12965,8 +12980,8 @@
   .py-18 {
     padding-block: calc(0.0625rem * 18);
   }
-  .underline {
-    text-decoration-line: underline;
+  .pt-16 {
+    padding-top: calc(0.0625rem * 16);
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -13026,7 +13041,7 @@
 }
 body {
   margin: 0;
-  width: 400px;
+  width: 500px;
 }
 body > header .kern-title,
 body > header .kern-body {
@@ -13053,6 +13068,10 @@ a:focus {
   outline: none;
   background-color: var(--color-focus-bg);
   color: #000;
+}
+.kern-body .kern-link {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 @property --tw-rotate-x {
   syntax: "*";

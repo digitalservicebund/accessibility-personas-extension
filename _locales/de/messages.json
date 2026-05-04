@@ -31,13 +31,13 @@
     "message": "Der Inhalt des aktuellen Tabs ist verschwommen, um Ashleighs Sehschwäche zu simulieren."
   },
   "ashleighInstructionScreenReader": {
-    "message": "<strong>Öffne einen Screenreader</strong> auf Deinem Gerät, um zu erfahren, wie Ashleigh durch die Seite navigiert."
+    "message": "Öffne einen Screenreader auf Deinem Gerät, um zu erfahren, wie Ashleigh durch die Seite navigiert."
   },
   "ashleighInstructionScreenReaderMac": {
-    "message": "Auf Mac kannst Du den intergrierten Screenreader <a href=\"https://support.apple.com/de-de/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> verwenden, indem Du Cmd + F5 drückst."
+    "message": "Auf Mac kannst Du den intergrierten Screenreader <a href=\"https://support.apple.com/de-de/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> verwenden, indem Du Cmd + F5 drückst."
   },
   "ashleighInstructionScreenReaderWindows": {
-    "message": "Unter Windows kannst Du den intergrierten Screenreader <a href=\"https://support.microsoft.com/de-de/windows/vollstandiger-leitfaden-fur-den-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> verwenden, indem Du die Windows-Logo-Taste + Strg + Enter drückst."
+    "message": "Unter Windows kannst Du den intergrierten Screenreader <a href=\"https://support.microsoft.com/de-de/windows/vollstandiger-leitfaden-fur-den-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"kern-link\">Narrator</a> verwenden, indem Du die Windows-Logo-Taste + Strg + Enter drückst."
   },
 
   "pawelTitle": {
@@ -45,9 +45,6 @@
   },
   "pawelDescription": {
     "message": "Eine autistische Person, die beim Surfen im Internet leicht abgelenkt wird."
-  },
-  "warningTitle": {
-    "message": "Warnung"
   },
   "pawelWarning": {
     "message": "Bei der Simulation werden laute Töne abgespielt. Bitte achte auf Deine Lautstärke."
@@ -94,7 +91,7 @@
     "message": "Der Mauszeiger zittert jetzt und simuliert Rons Tremor."
   },
   "ronInstructionCursorVisibility": {
-    "message": "<strong>Hinweis: Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
+    "message": "Hinweis: Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen."
   },
 
   "claudiaTitle": {
@@ -123,7 +120,7 @@
     "message": "Chris hat Schwierigkeiten, Farben zu sehen. Deshalb wird dein Tab in Graustufen angezeigt. Zudem nutzt er zur Navigation auf der Seite nur eine Tastatur, daher wird der Mauszeiger ausgeblendet."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "<strong>Hinweis: Wenn der  Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen.</strong>"
+    "message": "Hinweis: Wenn der  Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen."
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Lege deine Maus beiseite und verwende zur Navigation auf der Seite nur die Tastatur. Benutze die TAB- und ENTER-Tasten und achte auf die ausgewählten Elemente und deren Reihenfolge."

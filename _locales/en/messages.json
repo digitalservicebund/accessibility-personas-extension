@@ -31,13 +31,13 @@
     "message": "The current tab's content is now blurred to simulate Ashleigh's sight impairment."
   },
   "ashleighInstructionScreenReader": {
-    "message": "<strong>Open a screen reader</strong> on your device to experience how Ashleigh navigates the page."
+    "message": "Open a screen reader on your device to experience how Ashleigh navigates the page."
   },
   "ashleighInstructionScreenReaderMac": {
-    "message": "On Mac, you can use the native screen reader <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"underline\">VoiceOver</a> by pressing Cmd + F5."
+    "message": "On Mac, you can use the native screen reader <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> by pressing Cmd + F5."
   },
   "ashleighInstructionScreenReaderWindows": {
-    "message": "On Windows, you can use the native screen reader <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"underline\">Narrator</a> by pressing the Windows logo key + Ctrl + Enter."
+    "message": "On Windows, you can use the native screen reader <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"kern-link\">Narrator</a> by pressing the Windows logo key + Ctrl + Enter."
   },
 
   "pawelTitle": {
@@ -45,9 +45,6 @@
   },
   "pawelDescription": {
     "message": "An autistic person who is easily distracted when browsing the web."
-  },
-  "warningTitle": {
-    "message": "Warning"
   },
   "pawelWarning": {
     "message": "Loud sounds will be played during the simulation. Please check your volume."
@@ -94,7 +91,7 @@
     "message": "The cursor is now shaking, simulating Ron's tremor."
   },
   "ronInstructionCursorVisibility": {
-    "message": "<strong>Note: If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
+    "message": "Note: If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
   },
 
   "claudiaTitle": {
@@ -123,7 +120,7 @@
     "message": "Because Chris has trouble seeing colors, your tab is shown in grayscale. The mouse cursor is hidden since Chris uses the keyboard for navigation."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "<strong>Note: If the cursor is still visible, try moving it to the address bar and back in.</strong>"
+    "message": "Note: If the cursor is still visible, try moving it to the address bar and back in.</strong>"
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Put your mouse aside and only use the keyboard to navigate the page. Use the TAB and ENTER keys and pay attention to the order in which elements are selected."

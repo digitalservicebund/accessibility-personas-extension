@@ -28,7 +28,7 @@
 
 body {
   margin: 0;
-  width: 400px;
+  width: 500px;
 }
 
 body > header .kern-title,
@@ -61,4 +61,9 @@ a:focus {
   outline: none;
   background-color: var(--color-focus-bg);
   color: #000;
+}
+
+.kern-body .kern-link {
+  padding-top: 0;
+  padding-bottom: 0;
 }

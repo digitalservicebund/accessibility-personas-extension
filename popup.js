@@ -176,10 +176,7 @@ const createPersonaElement = function (persona) {
       <div class="warning kern-alert kern-alert--warning" role="alert">
         <div class="kern-alert__header">
           <span class="kern-icon kern-icon--warning" aria-hidden="true"></span>
-          <span class="kern-title">${translateContent("warningTitle")}</span>
-        </div>
-        <div class="kern-alert__body">
-          <p class="kern-body">${translateContent(persona.warning)}</p>
+          <span class="kern-title kern-title--small">${translateContent(persona.warning)}</span>
         </div>
       </div>`;
   }
@@ -187,40 +184,44 @@ const createPersonaElement = function (persona) {
   // Create the HTML for the persona element
   personaCard.innerHTML = `
     <div class="kern-card__container">
-      <header class="kern-card__header">
-        <div class="flex items-center justify-between w-full">
-          <hgroup>
-            <h2 class="kern-title">${persona.title}</h2>
-          </hgroup>
+      <div class="flex gap-16 w-full">
+        <div class="shrink-0">
           <img src="personas/${persona.name}/${persona.name}.png" alt="${persona.title} persona image" aria-hidden="true"/>
         </div>
-      </header>
-      <section class="kern-card__body">
-        <div>
-          <p class="persona-description kern-body">${persona.description}</p>
+        <div class="flex-1 min-w-0 flex flex-col gap-4">
+          <header class="kern-card__header">
+            <hgroup>
+              <h2 class="kern-title">${persona.title}</h2>
+            </hgroup>
+          </header>
+          <section class="kern-card__body">
+            <div>
+              <p class="persona-description kern-subline">${persona.description}</p>
+            </div>
+            ${warningElement}
+            <div
+              class="instructions hidden"
+              persona-name="${persona.name}"
+            >
+              ${persona.instructions
+                .map((instruction) => `<p class="kern-body">${instruction}</p>`)
+                .join("")}
+            </div>
+          </section>
+          <div class="flex flex-col gap-8 pt-16 items-start">
+            <button ${simulateBtnAttributes}>
+              <span class="kern-label">${simulateBtnText}</span>
+            </button>
+            <button class="persona-reset kern-btn kern-btn--primary hidden" persona-name="${persona.name}">
+              <span class="kern-label">${translateContent("resetButton")}</span>
+            </button>
+            <a href="${persona.learnMoreLink ? persona.learnMoreLink[userLang] || persona.learnMoreLink[userLang.split("-")[0]] || persona.learnMoreLink.en || "" : ""}" class="kern-link learn-more" target="_blank" rel="noopener noreferrer">
+              <span class="kern-icon kern-icon--open-in-new kern-icon--default" aria-hidden="true"></span>
+              <span>${translateContent("learnMore")}</span>
+            </a>
+          </div>
         </div>
-        ${warningElement}
-        <div
-          class="instructions hidden"
-          persona-name="${persona.name}"
-        >
-          ${persona.instructions
-            .map(
-              (instruction) => `<p class="kern-body mb-2">${instruction}</p>`,
-            )
-            .join("")}
-        </div>
-      </section>
-      <footer class="kern-card__footer">
-        <div class="kern-stack-sm w-full">
-          <button ${simulateBtnAttributes}>
-            <span class="kern-label">${simulateBtnText}</span>
-          </button>
-          <a href="${persona.learnMoreLink ? persona.learnMoreLink[userLang] || persona.learnMoreLink[userLang.split("-")[0]] || persona.learnMoreLink.en || "" : ""}" class="kern-btn kern-btn--tertiary learn-more" target="_blank" rel="noopener noreferrer">
-            <span class="kern-label">${translateContent("learnMore")}</span>
-          </a>
-        </div>
-      </footer>
+      </div>
     </div>
   `;
 
@@ -231,12 +232,10 @@ const createPersonaElement = function (persona) {
 const buildPopup = function () {
   const personaList = document.getElementById("persona-list");
 
-  ["popup-title", "popup-introduction", "reset-button-label"].forEach(
-    (elementId) => {
-      const element = document.getElementById(elementId);
-      element.innerText = translateContent(element.dataset.i18n);
-    },
-  );
+  ["popup-title", "popup-introduction"].forEach((elementId) => {
+    const element = document.getElementById(elementId);
+    element.innerText = translateContent(element.dataset.i18n);
+  });
 
   const translatedContent = translateContent(popupContent);
 
@@ -281,9 +280,11 @@ function formatPopup(personaName = null) {
       }
     });
 
-    // Show the reset button
-    const resetButton = document.getElementById("reset-button");
-    if (resetButton) resetButton.style.display = "block";
+    // Show the in-card reset button for the selected persona
+    const inCardResetButton = document.querySelector(
+      `.persona-reset[persona-name="${selectedPersonaName}"]`,
+    );
+    if (inCardResetButton) inCardResetButton.style.display = "inline-flex";
 
     // Hide the general introduction in the header
     const popupIntroduction = document.getElementById("popup-introduction");
@@ -341,11 +342,13 @@ document.querySelectorAll(".select-persona").forEach((button) => {
   });
 });
 
-// Reset button: Open a new tab with the original URL
-document.getElementById("reset-button").addEventListener("click", function () {
-  if (isChromeAvailable) {
-    chrome.runtime.sendMessage({ action: "resetSimulation" });
-  }
+// In-card reset buttons: stop the simulation
+document.querySelectorAll(".persona-reset").forEach((button) => {
+  button.addEventListener("click", function () {
+    if (isChromeAvailable) {
+      chrome.runtime.sendMessage({ action: "resetSimulation" });
+    }
+  });
 });
 
 // Close popup if requested in background.js

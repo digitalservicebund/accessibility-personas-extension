@@ -21,23 +21,6 @@ const popupContent = {
   resetButton: "resetButton",
   personas: [
     {
-      name: "ashleigh",
-      title: "ashleighTitle",
-      description: "ashleighDescription",
-      files: { css: true, js: false },
-      learnMoreLink: {
-        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user",
-        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ashleigh/",
-      },
-      instructions: [
-        "ashleighInstructionBlur",
-        "ashleighInstructionScreenReader",
-        operatingSystem === "mac"
-          ? "ashleighInstructionScreenReaderMac"
-          : "ashleighInstructionScreenReaderWindows",
-      ],
-    },
-    {
       name: "pawel",
       title: "pawelTitle",
       description: "pawelDescription",
@@ -74,7 +57,7 @@ const popupContent = {
       },
       instructions: [
         "ronInstructionShakingCursor",
-        "ronInstructionCursorVisibility",
+        { key: "ronInstructionCursorVisibility", type: "info" },
       ],
     },
     {
@@ -104,8 +87,25 @@ const popupContent = {
       },
       instructions: [
         "chrisInstructionColorPerception",
-        "chrisInstructionCursorVisibility",
         "chrisInstructionKeyboardNavigation",
+        { key: "chrisInstructionCursorVisibility", type: "info" },
+      ],
+    },
+    {
+      name: "ashleigh",
+      title: "ashleighTitle",
+      description: "ashleighDescription",
+      files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ashleigh/",
+      },
+      instructions: [
+        "ashleighInstructionBlur",
+        "ashleighInstructionScreenReader",
+        operatingSystem === "mac"
+          ? "ashleighInstructionScreenReaderMac"
+          : "ashleighInstructionScreenReaderWindows",
       ],
     },
     {
@@ -204,7 +204,18 @@ const createPersonaElement = function (persona) {
               persona-name="${persona.name}"
             >
               ${persona.instructions
-                .map((instruction) => `<p class="kern-body">${instruction}</p>`)
+                .map((instruction) => {
+                  if (typeof instruction === "string") {
+                    return `<p class="kern-body">${instruction}</p>`;
+                  }
+                  return `
+                    <div class="kern-alert kern-alert--${instruction.type}" role="note">
+                      <div class="kern-alert__header">
+                        <span class="kern-icon kern-icon--${instruction.type}" aria-hidden="true"></span>
+                        <span class="kern-title kern-title--small">${instruction.key}</span>
+                      </div>
+                    </div>`;
+                })
                 .join("")}
             </div>
           </section>

@@ -91,7 +91,7 @@
     "message": "Le curseur bouge désormais de façon à simuler le tremblement de Ron."
   },
   "ronInstructionCursorVisibility": {
-    "message": "Note : Si le curseur original est toujours visible, essayez de le déplacer vers la barre d'adresse puis de revenir dans l'espace principal de la fenêtre."
+    "message": "Si le curseur original est toujours visible, essayez de le déplacer vers la barre d'adresse puis de revenir dans l'espace principal de la fenêtre."
   },
 
   "claudiaTitle": {
@@ -120,7 +120,7 @@
     "message": "Comme Chris ne voit pas bien les couleurs, votre onglet est affiché en niveaux de gris. Votre curseur de souris est masqué car Chris n'utilise que son clavier."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "Note : Si le curseur est toujours visible, essayez de le déplacer vers la barre d'adresse puis de revenir dans l'espace principal de la fenêtre."
+    "message": "Si le curseur est toujours visible, essayez de le déplacer vers la barre d'adresse puis de revenir dans l'espace principal de la fenêtre."
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Mettez votre souris de côté et utilisez uniquement le clavier pour naviguer sur la page. Utilisez les touches TAB et ENTRÉE et prêtez attention à l'ordre dans lequel les éléments sont sélectionnés."

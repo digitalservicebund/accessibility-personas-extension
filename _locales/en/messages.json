@@ -91,7 +91,7 @@
     "message": "The cursor is now shaking, simulating Ron's tremor."
   },
   "ronInstructionCursorVisibility": {
-    "message": "Note: If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
+    "message": "If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
   },
 
   "claudiaTitle": {
@@ -120,7 +120,7 @@
     "message": "Because Chris has trouble seeing colors, your tab is shown in grayscale. The mouse cursor is hidden since Chris uses the keyboard for navigation."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "Note: If the cursor is still visible, try moving it to the address bar and back in.</strong>"
+    "message": "If the cursor is still visible, try moving it to the address bar and back in.</strong>"
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Put your mouse aside and only use the keyboard to navigate the page. Use the TAB and ENTER keys and pay attention to the order in which elements are selected."

@@ -91,7 +91,7 @@
     "message": "Der Mauszeiger zittert jetzt und simuliert Rons Tremor."
   },
   "ronInstructionCursorVisibility": {
-    "message": "Hinweis: Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen."
+    "message": "Wenn der ursprüngliche Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen."
   },
 
   "claudiaTitle": {
@@ -120,7 +120,7 @@
     "message": "Chris hat Schwierigkeiten, Farben zu sehen. Deshalb wird dein Tab in Graustufen angezeigt. Zudem nutzt er zur Navigation auf der Seite nur eine Tastatur, daher wird der Mauszeiger ausgeblendet."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "Hinweis: Wenn der  Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen."
+    "message": "Wenn der  Mauszeiger noch sichtbar ist, versuche ihn in die Adressleiste und wieder zurück zu bewegen."
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Lege deine Maus beiseite und verwende zur Navigation auf der Seite nur die Tastatur. Benutze die TAB- und ENTER-Tasten und achte auf die ausgewählten Elemente und deren Reihenfolge."

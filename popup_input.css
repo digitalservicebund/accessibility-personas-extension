@@ -22,7 +22,6 @@
 
 :root {
   --kern-typography-font-size-static-medium: var(--kern-font-size-16);
-  --kern-typography-font-size-static-small: var(--kern-font-size-12);
 }
 
 body {

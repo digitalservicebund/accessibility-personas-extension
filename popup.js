@@ -135,15 +135,15 @@ const userLang = isChromeAvailable ? chrome.i18n.getUILanguage() : "en";
 document.documentElement.lang = userLang;
 
 // Function to look up the i18n messages later for the correct locale
-const translateContent = function (obj) {
+const translateContent = function (obj, substitutions) {
   // For local testing, just return keys
   const getMessage = (key) =>
-    isChromeAvailable ? chrome.i18n.getMessage(key) : key;
+    isChromeAvailable ? chrome.i18n.getMessage(key, substitutions) : key;
 
   if (typeof obj === "string") {
     return getMessage(obj) || obj;
   } else if (Array.isArray(obj)) {
-    return obj.map(translateContent);
+    return obj.map((item) => translateContent(item));
   } else if (typeof obj === "object" && obj !== null) {
     const result = {};
     for (const [key, value] of Object.entries(obj)) {
@@ -209,7 +209,7 @@ const createPersonaElement = function (persona) {
                     return `<p class="kern-body">${instruction}</p>`;
                   }
                   return `
-                    <div class="kern-alert kern-alert--${instruction.type}" role="note">
+                    <div class="kern-alert kern-alert--${instruction.type} mt-16" role="note">
                       <div class="kern-alert__header">
                         <span class="kern-icon kern-icon--${instruction.type}" aria-hidden="true"></span>
                         <span class="kern-title kern-title--small">${instruction.key}</span>
@@ -228,7 +228,7 @@ const createPersonaElement = function (persona) {
             </button>
             <a href="${persona.learnMoreLink ? persona.learnMoreLink[userLang] || persona.learnMoreLink[userLang.split("-")[0]] || persona.learnMoreLink.en || "" : ""}" class="kern-link learn-more" target="_blank" rel="noopener noreferrer">
               <span class="kern-icon kern-icon--open-in-new kern-icon--default" aria-hidden="true"></span>
-              <span>${translateContent("learnMore")}</span>
+              <span>${translateContent("learnMore", [persona.title])}</span>
             </a>
           </div>
         </div>

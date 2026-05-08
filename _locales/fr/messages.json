@@ -18,7 +18,13 @@
     "message": "Simuler"
   },
   "learnMore": {
-    "message": "En savoir plus sur ce persona"
+    "message": "En savoir plus sur $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Ashleigh"
+      }
+    }
   },
 
   "ashleighTitle": {

@@ -1,4 +1,3 @@
-// Get operating system to adjust some instructions
 const getOperatingSystem = () => {
   try {
     const userAgent = navigator.userAgent.toLowerCase();
@@ -121,7 +120,6 @@ const popupContent = {
   ],
 };
 
-// For local testing in standalone tab, check if chrome API is available
 const isChromeAvailable =
   typeof chrome !== "undefined" &&
   chrome.tabs &&
@@ -130,13 +128,10 @@ const isChromeAvailable =
   chrome.i18n.getMessage &&
   chrome.storage;
 
-// Set html lang attribute based on browser language
 const userLang = isChromeAvailable ? chrome.i18n.getUILanguage() : "en";
 document.documentElement.lang = userLang;
 
-// Function to look up the i18n messages later for the correct locale
 const translateContent = function (obj, substitutions) {
-  // For local testing, just return keys
   const getMessage = (key) =>
     isChromeAvailable ? chrome.i18n.getMessage(key, substitutions) : key;
 
@@ -154,22 +149,36 @@ const translateContent = function (obj, substitutions) {
   return obj;
 };
 
-// Function to generate a single persona element in the list
+const resolveLearnMoreLink = function (links, lang) {
+  if (!links) return "";
+  return links[lang] || links[lang.split("-")[0]] || links.en || "";
+};
+
 const createPersonaElement = function (persona) {
   const personaCard = document.createElement("article");
   personaCard.className = "kern-card persona";
-  personaCard.setAttribute("persona-name", persona.name);
-  const simulateBtnText = translateContent("simulateButton");
+  personaCard.setAttribute("data-persona-name", persona.name);
 
-  // Give the "simulate" button all necessary attributes so that
-  // the correct simulation is started later
-  let simulateBtnAttributes = `class="select-persona kern-btn kern-btn--primary" persona-name="${persona.name}"`;
+  const simulateBtn = document.createElement("button");
+  simulateBtn.className = "select-persona kern-btn kern-btn--primary";
+  simulateBtn.setAttribute("data-persona-name", persona.name);
   if (persona.files.css) {
-    simulateBtnAttributes += ` data-css="personas/${persona.name}/${persona.name}.css"`;
+    simulateBtn.setAttribute(
+      "data-css",
+      `personas/${persona.name}/${persona.name}.css`,
+    );
   }
   if (persona.files.js) {
-    simulateBtnAttributes += ` data-js="personas/${persona.name}/${persona.name}.js"`;
+    simulateBtn.setAttribute(
+      "data-js",
+      `personas/${persona.name}/${persona.name}.js`,
+    );
   }
+  const simulateBtnLabel = document.createElement("span");
+  simulateBtnLabel.className = "kern-label";
+  simulateBtnLabel.textContent = translateContent("simulateButton");
+  simulateBtn.appendChild(simulateBtnLabel);
+
   let warningElement = "";
   if (persona.warning) {
     warningElement = `
@@ -181,7 +190,6 @@ const createPersonaElement = function (persona) {
       </div>`;
   }
 
-  // Create the HTML for the persona element
   personaCard.innerHTML = `
     <div class="kern-card__container">
       <div class="flex gap-16 w-full">
@@ -201,7 +209,7 @@ const createPersonaElement = function (persona) {
             ${warningElement}
             <div
               class="instructions hidden"
-              persona-name="${persona.name}"
+              data-persona-name="${persona.name}"
             >
               ${persona.instructions
                 .map((instruction) => {
@@ -219,14 +227,11 @@ const createPersonaElement = function (persona) {
                 .join("")}
             </div>
           </section>
-          <div class="flex flex-col gap-8 pt-16 items-start">
-            <button ${simulateBtnAttributes}>
-              <span class="kern-label">${simulateBtnText}</span>
-            </button>
-            <button class="persona-reset kern-btn kern-btn--primary hidden" persona-name="${persona.name}">
+          <div id="persona-actions-${persona.name}" class="flex flex-col gap-8 pt-16 items-start">
+            <button class="persona-reset kern-btn kern-btn--primary hidden" data-persona-name="${persona.name}">
               <span class="kern-label">${translateContent("resetButton")}</span>
             </button>
-            <a href="${persona.learnMoreLink ? persona.learnMoreLink[userLang] || persona.learnMoreLink[userLang.split("-")[0]] || persona.learnMoreLink.en || "" : ""}" class="kern-link learn-more" target="_blank" rel="noopener noreferrer">
+            <a href="${resolveLearnMoreLink(persona.learnMoreLink, userLang)}" class="kern-link learn-more" target="_blank" rel="noopener noreferrer">
               <span class="kern-icon kern-icon--open-in-new kern-icon--default" aria-hidden="true"></span>
               <span>${translateContent("learnMore", [persona.title])}</span>
             </a>
@@ -236,16 +241,20 @@ const createPersonaElement = function (persona) {
     </div>
   `;
 
+  const actionsContainer = personaCard.querySelector(
+    `#persona-actions-${persona.name}`,
+  );
+  actionsContainer.insertBefore(simulateBtn, actionsContainer.firstChild);
+
   return personaCard;
 };
 
-// Function to build the entire popup
 const buildPopup = function () {
   const personaList = document.getElementById("persona-list");
 
   ["popup-title", "popup-introduction"].forEach((elementId) => {
     const element = document.getElementById(elementId);
-    element.innerText = translateContent(element.dataset.i18n);
+    element.textContent = translateContent(element.dataset.i18n);
   });
 
   const translatedContent = translateContent(popupContent);
@@ -259,48 +268,48 @@ const buildPopup = function () {
 buildPopup();
 
 // Function to re-format the popup when a persona is selected
-function formatPopup(personaName = null) {
-  function updateElements(selectedPersonaName) {
+const formatPopup = function (personaName = null) {
+  const updateElements = function (selectedPersonaName) {
     if (!selectedPersonaName) return;
 
     // Hide the activation button for the selected persona
     const activationButton = document.querySelector(
-      `.select-persona[persona-name="${selectedPersonaName}"]`,
+      `.select-persona[data-persona-name="${selectedPersonaName}"]`,
     );
-    if (activationButton) activationButton.style.display = "none";
+    if (activationButton) activationButton.classList.add("hidden");
 
     // Show the instructions for the selected persona
     const instructionsElement = document.querySelector(
-      `.instructions[persona-name="${selectedPersonaName}"]`,
+      `.instructions[data-persona-name="${selectedPersonaName}"]`,
     );
-    if (instructionsElement) instructionsElement.style.display = "block";
+    if (instructionsElement) instructionsElement.classList.remove("hidden");
 
     // Hide the warning if there is one (only for Pawel atm)
     const personaElement = document.querySelector(
-      `.persona[persona-name="${selectedPersonaName}"]`,
+      `.persona[data-persona-name="${selectedPersonaName}"]`,
     );
     if (personaElement) {
       const warningElement = personaElement.querySelector(".warning");
-      if (warningElement) warningElement.style.display = "none";
+      if (warningElement) warningElement.classList.add("hidden");
     }
 
     // Hide all non-selected personas
     document.querySelectorAll(".persona").forEach((persona) => {
-      if (persona.getAttribute("persona-name") !== selectedPersonaName) {
-        persona.style.display = "none";
+      if (persona.getAttribute("data-persona-name") !== selectedPersonaName) {
+        persona.classList.add("hidden");
       }
     });
 
     // Show the in-card reset button for the selected persona
     const inCardResetButton = document.querySelector(
-      `.persona-reset[persona-name="${selectedPersonaName}"]`,
+      `.persona-reset[data-persona-name="${selectedPersonaName}"]`,
     );
-    if (inCardResetButton) inCardResetButton.style.display = "inline-flex";
+    if (inCardResetButton) inCardResetButton.classList.remove("hidden");
 
     // Hide the general introduction in the header
     const popupIntroduction = document.getElementById("popup-introduction");
-    if (popupIntroduction) popupIntroduction.style.display = "none";
-  }
+    if (popupIntroduction) popupIntroduction.classList.add("hidden");
+  };
 
   if (isChromeAvailable) {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -321,23 +330,23 @@ function formatPopup(personaName = null) {
   } else {
     updateElements(personaName);
   }
-}
+};
 
 // Attempt to format the popup based on local storage when it is opened
 formatPopup();
 
-// Persona selection button: Reformat the list and start the simulatino
+// Start simulation when a simulate button is clicked
 document.querySelectorAll(".select-persona").forEach((button) => {
   button.addEventListener("click", function () {
     // Get the CSS and JS file names from the data attributes
     const cssFile = this.getAttribute("data-css");
     const jsFile = this.getAttribute("data-js") || null;
-    const personaName = this.getAttribute("persona-name");
+    const personaName = this.getAttribute("data-persona-name");
 
     // Format the persona list
     formatPopup(personaName);
 
-    // Send a message to the background script to start simulation
+    // Start simulation
     if (isChromeAvailable) {
       chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const currentTabId = tabs[0].id;
@@ -353,7 +362,7 @@ document.querySelectorAll(".select-persona").forEach((button) => {
   });
 });
 
-// In-card reset buttons: stop the simulation
+// Stop the simulation if reset button is clicked
 document.querySelectorAll(".persona-reset").forEach((button) => {
   button.addEventListener("click", function () {
     if (isChromeAvailable) {
@@ -363,8 +372,10 @@ document.querySelectorAll(".persona-reset").forEach((button) => {
 });
 
 // Close popup if requested in background.js
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "closePopup") {
-    window.close();
-  }
-});
+if (isChromeAvailable) {
+  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "closePopup") {
+      window.close();
+    }
+  });
+}

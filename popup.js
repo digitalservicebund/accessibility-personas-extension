@@ -21,36 +21,29 @@ const popupContent = {
   resetButton: "resetButton",
   personas: [
     {
-      name: "ashleigh",
-      title: "ashleighTitle",
-      description: "ashleighDescription",
-      files: { css: true, js: false },
-      instructions: [
-        "ashleighInstructionBlur",
-        "ashleighInstructionScreenReader",
-        operatingSystem === "mac"
-          ? "ashleighInstructionScreenReaderMac"
-          : "ashleighInstructionScreenReaderWindows",
-        "ashleighLearnMore",
-      ],
-    },
-    {
       name: "pawel",
       title: "pawelTitle",
       description: "pawelDescription",
       warning: "pawelWarning",
       files: { css: false, js: true },
-      instructions: ["pawelInstructionDistractions", "pawelLearnMore"],
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/pawel-user-with-aspergers",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/pawel/",
+      },
+      instructions: ["pawelInstructionDistractions"],
     },
     {
       name: "simone",
       title: "simoneTitle",
       description: "simoneDescription",
       files: { css: false, js: true },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/simone-dyslexic-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/simone/",
+      },
       instructions: [
         "simoneInstructionScrambledText",
         "simoneInstructionReadParagraphs",
-        "simoneLearnMore",
       ],
     },
     {
@@ -58,10 +51,13 @@ const popupContent = {
       title: "ronTitle",
       description: "ronDescription",
       files: { css: false, js: true },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ron-older-user-with-multiple-conditions",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ron/",
+      },
       instructions: [
         "ronInstructionShakingCursor",
-        "ronInstructionCursorVisibility",
-        "ronLearnMore",
+        { key: "ronInstructionCursorVisibility", type: "info" },
       ],
     },
     {
@@ -69,12 +65,15 @@ const popupContent = {
       title: "claudiaTitle",
       description: "claudiaDescription",
       files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/claudia-partially-sighted-screen-magnifier-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/claudia/",
+      },
       instructions: [
         "claudiaInstructionMagnification",
         operatingSystem === "mac"
           ? "claudiaInstructionSystemSettingsMac"
           : "claudiaInstructionSystemSettingsWindows",
-        "claudiaLearnMore",
       ],
     },
     {
@@ -82,11 +81,31 @@ const popupContent = {
       title: "chrisTitle",
       description: "chrisDescription",
       files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/christopher-user-with-rheumatoid-arthritis",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/christopher/",
+      },
       instructions: [
         "chrisInstructionColorPerception",
-        "chrisInstructionCursorVisibility",
         "chrisInstructionKeyboardNavigation",
-        "chrisLearnMore",
+        { key: "chrisInstructionCursorVisibility", type: "info" },
+      ],
+    },
+    {
+      name: "ashleigh",
+      title: "ashleighTitle",
+      description: "ashleighDescription",
+      files: { css: true, js: false },
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/ashleigh-partially-sighted-screenreader-user",
+        de: "https://digitalservicebund.usercontent.opencode.de/accessibility/barrierefreiheits-personas/personas/ashleigh/",
+      },
+      instructions: [
+        "ashleighInstructionBlur",
+        "ashleighInstructionScreenReader",
+        operatingSystem === "mac"
+          ? "ashleighInstructionScreenReaderMac"
+          : "ashleighInstructionScreenReaderWindows",
       ],
     },
     {
@@ -94,11 +113,10 @@ const popupContent = {
       title: "saleemTitle",
       description: "saleemDescription",
       files: { css: false, js: false },
-      instructions: [
-        "saleemInstructionMute",
-        "saleemInstructionVideo",
-        "saleemLearnMore",
-      ],
+      learnMoreLink: {
+        en: "https://www.gov.uk/government/publications/understanding-disabilities-and-impairments-user-profiles/saleem-profoundly-deaf-user",
+      },
+      instructions: ["saleemInstructionMute", "saleemInstructionVideo"],
     },
   ],
 };
@@ -117,15 +135,15 @@ const userLang = isChromeAvailable ? chrome.i18n.getUILanguage() : "en";
 document.documentElement.lang = userLang;
 
 // Function to look up the i18n messages later for the correct locale
-const translateContent = function (obj) {
+const translateContent = function (obj, substitutions) {
   // For local testing, just return keys
   const getMessage = (key) =>
-    isChromeAvailable ? chrome.i18n.getMessage(key) : key;
+    isChromeAvailable ? chrome.i18n.getMessage(key, substitutions) : key;
 
   if (typeof obj === "string") {
     return getMessage(obj) || obj;
   } else if (Array.isArray(obj)) {
-    return obj.map(translateContent);
+    return obj.map((item) => translateContent(item));
   } else if (typeof obj === "object" && obj !== null) {
     const result = {};
     for (const [key, value] of Object.entries(obj)) {
@@ -138,14 +156,14 @@ const translateContent = function (obj) {
 
 // Function to generate a single persona element in the list
 const createPersonaElement = function (persona) {
-  const personaSection = document.createElement("section");
-  personaSection.className = "persona p-4 bg-slate-200 m-4 rounded-md";
-  personaSection.setAttribute("persona-name", persona.name);
+  const personaCard = document.createElement("article");
+  personaCard.className = "kern-card persona";
+  personaCard.setAttribute("persona-name", persona.name);
   const simulateBtnText = translateContent("simulateButton");
 
   // Give the "simulate" button all necessary attributes so that
   // the correct simulation is started later
-  let simulateBtnAttributes = `class="select-persona font-semibold bg-slate-800 rounded-lg text-white px-4 py-2" persona-name="${persona.name}"`;
+  let simulateBtnAttributes = `class="select-persona kern-btn kern-btn--primary" persona-name="${persona.name}"`;
   if (persona.files.css) {
     simulateBtnAttributes += ` data-css="personas/${persona.name}/${persona.name}.css"`;
   }
@@ -154,44 +172,78 @@ const createPersonaElement = function (persona) {
   }
   let warningElement = "";
   if (persona.warning) {
-    warningElement = `<p class="warning bg-yellow-200 p-3 mt-2 rounded-md">${translateContent(persona.warning)}</p>`;
+    warningElement = `
+      <div class="warning kern-alert kern-alert--warning" role="alert">
+        <div class="kern-alert__header">
+          <span class="kern-icon kern-icon--warning" aria-hidden="true"></span>
+          <span class="kern-title kern-title--small">${translateContent(persona.warning)}</span>
+        </div>
+      </div>`;
   }
 
   // Create the HTML for the persona element
-  personaSection.innerHTML = `
-    <h2 class="text-lg font-semibold">${persona.title}</h2>
-    <div class="mb-1">
-      <div class="flex items-center py-2">
-        <img src="personas/${persona.name}/${persona.name}.png" alt="${
-          persona.title
-        } persona image" aria-hidden="true"/>
-        <p class="persona-description text-base mx-4">${persona.description}</p>
-        <button
-          ${simulateBtnAttributes}"
-        >
-          ${simulateBtnText}
-        </button>
+  personaCard.innerHTML = `
+    <div class="kern-card__container">
+      <div class="flex gap-16 w-full">
+        <div class="shrink-0">
+          <img src="personas/${persona.name}/${persona.name}.png" alt="${persona.title} persona image" aria-hidden="true"/>
+        </div>
+        <div class="flex-1 min-w-0 flex flex-col gap-4">
+          <header class="kern-card__header">
+            <hgroup>
+              <h2 class="kern-title">${persona.title}</h2>
+            </hgroup>
+          </header>
+          <section class="kern-card__body">
+            <div>
+              <p class="persona-description kern-subline">${persona.description}</p>
+            </div>
+            ${warningElement}
+            <div
+              class="instructions hidden"
+              persona-name="${persona.name}"
+            >
+              ${persona.instructions
+                .map((instruction) => {
+                  if (typeof instruction === "string") {
+                    return `<p class="kern-body">${instruction}</p>`;
+                  }
+                  return `
+                    <div class="kern-alert kern-alert--${instruction.type} mt-16" role="note">
+                      <div class="kern-alert__header">
+                        <span class="kern-icon kern-icon--${instruction.type}" aria-hidden="true"></span>
+                        <span class="kern-title kern-title--small">${instruction.key}</span>
+                      </div>
+                    </div>`;
+                })
+                .join("")}
+            </div>
+          </section>
+          <div class="flex flex-col gap-8 pt-16 items-start">
+            <button ${simulateBtnAttributes}>
+              <span class="kern-label">${simulateBtnText}</span>
+            </button>
+            <button class="persona-reset kern-btn kern-btn--primary hidden" persona-name="${persona.name}">
+              <span class="kern-label">${translateContent("resetButton")}</span>
+            </button>
+            <a href="${persona.learnMoreLink ? persona.learnMoreLink[userLang] || persona.learnMoreLink[userLang.split("-")[0]] || persona.learnMoreLink.en || "" : ""}" class="kern-link learn-more" target="_blank" rel="noopener noreferrer">
+              <span class="kern-icon kern-icon--open-in-new kern-icon--default" aria-hidden="true"></span>
+              <span>${translateContent("learnMore", [persona.title])}</span>
+            </a>
+          </div>
+        </div>
       </div>
-      ${warningElement}
-    </div>
-    <div
-      class="instructions hidden p-4 mt-2 bg-slate-700 rounded-md text-white"
-      persona-name="${persona.name}"
-    >
-      ${persona.instructions
-        .map((instruction) => `<p class="mb-2">${instruction}</p>`)
-        .join("")}
     </div>
   `;
 
-  return personaSection;
+  return personaCard;
 };
 
 // Function to build the entire popup
 const buildPopup = function () {
   const personaList = document.getElementById("persona-list");
 
-  ["popup-title", "popup-introduction", "reset-button"].forEach((elementId) => {
+  ["popup-title", "popup-introduction"].forEach((elementId) => {
     const element = document.getElementById(elementId);
     element.innerText = translateContent(element.dataset.i18n);
   });
@@ -239,9 +291,11 @@ function formatPopup(personaName = null) {
       }
     });
 
-    // Show the reset button
-    const resetButton = document.getElementById("reset-button");
-    if (resetButton) resetButton.style.display = "block";
+    // Show the in-card reset button for the selected persona
+    const inCardResetButton = document.querySelector(
+      `.persona-reset[persona-name="${selectedPersonaName}"]`,
+    );
+    if (inCardResetButton) inCardResetButton.style.display = "inline-flex";
 
     // Hide the general introduction in the header
     const popupIntroduction = document.getElementById("popup-introduction");
@@ -299,11 +353,13 @@ document.querySelectorAll(".select-persona").forEach((button) => {
   });
 });
 
-// Reset button: Open a new tab with the original URL
-document.getElementById("reset-button").addEventListener("click", function () {
-  if (isChromeAvailable) {
-    chrome.runtime.sendMessage({ action: "resetSimulation" });
-  }
+// In-card reset buttons: stop the simulation
+document.querySelectorAll(".persona-reset").forEach((button) => {
+  button.addEventListener("click", function () {
+    if (isChromeAvailable) {
+      chrome.runtime.sendMessage({ action: "resetSimulation" });
+    }
+  });
 });
 
 // Close popup if requested in background.js

@@ -2,33 +2,32 @@
 <html>
   <head>
     <title>Accessibility Personas</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/@kern-ux/native/dist/fonts/fira-sans.css"
+    />
     <link rel="stylesheet" type="text/css" href="popup_output.css" />
   </head>
 
-  <body class="text-base font-sans">
-    <header
-      class="sticky top-0 bg-slate-800 text-white shadow-md px-6 pt-6 pb-2"
-    >
-      <div class="flex items-center justify-between mb-4">
-        <h1
-          id="popup-title"
-          class="text-xl font-semibold"
-          data-i18n="popupTitle"
-        ></h1>
-        <button
-          id="reset-button"
-          class="hidden font-semibold text-white bg-rose-800 rounded-lg px-4 py-2"
-          data-i18n="resetButton"
-        ></button>
-      </div>
+  <body>
+    <header class="sticky top-0 z-10 bg-kern-action-default px-16 py-24">
+      <h1
+        id="popup-title"
+        class="kern-title kern-title--large mb-6"
+        data-i18n="popupTitle"
+      ></h1>
       <p
         id="popup-introduction"
-        class="leading-6 mb-4"
+        class="kern-body"
         data-i18n="popupIntroduction"
       ></p>
     </header>
 
-    <main id="persona-list" role="main">
+    <main
+      id="persona-list"
+      class="kern-container-fluid kern-stack py-18"
+      role="main"
+    >
       <!-- Personas are inserted here with popup.js -->
     </main>
 

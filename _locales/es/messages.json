@@ -40,10 +40,10 @@
     "message": "Activa un lector de pantalla en tu dispositivo para ver cómo navega Ashleigh por la página."
   },
   "ashleighInstructionScreenReaderMac": {
-    "message": "En Mac, puedes utilizar el lector de pantalla integrado <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> by pressing Cmd + F5."
+    "message": "En Mac, puedes utilizar el lector de pantalla integrado <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> presionando Cmd + F5."
   },
   "ashleighInstructionScreenReaderWindows": {
-    "message": "En Windows, puedes utilizar el lector de pantalla integrado <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"kern-link\">Narrator</a> by pressing the Windows logo key + Ctrl + Enter."
+    "message": "En Windows, puedes utilizar el lector de pantalla integrado <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"kern-link\">Narrator</a> presionando la tecla del logotipo de Windows + Ctrl + Enter."
   },
 
   "pawelTitle": {
@@ -97,7 +97,7 @@
     "message": "El cursor está temblando, simulando el temblor de Ron."
   },
   "ronInstructionCursorVisibility": {
-    "message": "If the original cursor is still visible, try moving it to the address bar and back in.</strong>"
+    "message": "<strong>Si el cursor original sigue siendo visible, intenta moverlo a la barra de direcciones y volverlo a introducir.</strong>"
   },
 
   "claudiaTitle": {
@@ -107,10 +107,10 @@
     "message": "Una persona con deficiencia visual que utiliza una lupa de pantalla."
   },
   "claudiaInstructionMagnification": {
-    "message": "Claudia needs to magnify the page content to see everything clearly. The current tab is now zoomed in to 200%. High contrast mode is enabled."
+    "message": "Claudia necesita aumentar el tamaño del contenido de la página para verlo todo con claridad. La pestaña actual ahora tiene un zoom del 200 %. El modo de alto contraste está habilitado."
   },
   "claudiaInstructionSystemSettingsMac": {
-    "message": "Set your mouse cursor to maximum size to improve the simulation. To do this, go to “Accessibility > Display” in the system settings."
+    "message": "Ajusta el cursor del ratón al tamaño máximo para mejorar la simulación. Para hacerlo, ve a «Accesibilidad > Pantalla» en los ajustes del sistema."
   },
   "claudiaInstructionSystemSettingsWindows": {
     "message": "Set your mouse cursor to maximum size to improve the simulation. To do this, go to “Accessibility > Mouse pointer and touch” in the system settings."
@@ -126,7 +126,7 @@
     "message": "Debido a que Chris tiene dificultades para ver los colores, tu pestaña se muestra en escala de grises. El cursor del ratón está oculto ya que Chris utiliza el teclado para la navegación."
   },
   "chrisInstructionCursorVisibility": {
-    "message": "«Si el cursor sigue siendo visible, intenta moverlo a la barra de direcciones y volver a la página.</strong>"
+    "message": "<strong>Si el cursor sigue siendo visible, intenta moverlo a la barra de direcciones y volver a la página.</strong>"
   },
   "chrisInstructionKeyboardNavigation": {
     "message": "Deja el ratón a un lado y navega por la página únicamente con el teclado. tiliza las teclas TAB y ENTER y fíjate en el orden de selección de los elementos."

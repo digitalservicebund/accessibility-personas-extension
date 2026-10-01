@@ -40,7 +40,7 @@
     "message": "Ouvrez un lecteur d'écran sur votre appareil pour vous familiariser avec la façon dont Ashleigh navigue sur la page."
   },
   "ashleighInstructionScreenReaderMac": {
-    "message": "Sur Mac, vous pouvez utiliser le lecteur d'écran natif <a href=\"https://support.apple.com/fr-fr/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> en appuyant sur Cmd + F5."
+    "message": "Sur macOS, vous pouvez utiliser le lecteur d'écran natif <a href=\"https://support.apple.com/fr-fr/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> en appuyant sur Cmd + F5."
   },
   "ashleighInstructionScreenReaderWindows": {
     "message": "Sur Windows, vous pouvez utiliser le lecteur d'écran natif <a href=\"https://support.microsoft.com/fr-fr/windows/guide-complet-sur-le-narrateur-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"kern-link\">Narrator</a> en appuyant sur la touche Windows + Ctrl + Entrée."
@@ -62,10 +62,10 @@
     "message": "Ai-je mangé à midi ?"
   },
   "pawelMessage02": {
-    "message": "Je dois bientôt reprendre le travail..."
+    "message": "Je dois bientôt reprendre le travail…"
   },
   "pawelMessage03": {
-    "message": "La ventilation fait beaucoup de bruit aujourd'hui. Whou-ou-ou-ou..."
+    "message": "La ventilation fait beaucoup de bruit aujourd'hui. Whou-ou-ou-ou…"
   },
   "pawelMessage04": {
     "message": "Dois-je répondre à ce texto ?"

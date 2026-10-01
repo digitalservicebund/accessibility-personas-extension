@@ -81,7 +81,7 @@
     "message": "Una persona disléxica que necesita más tiempo para entender textos y formularios."
   },
   "simoneInstructionScrambledText": {
-    "message": "El texto en la pestaña actual se ha desordenado para simular la experiencia de Simone con la dislexia. Una regla de pantalla le ayuda a leer el texto. Simone también utiliza una superposición de color para reducir la fatiga visual. Se ha cambiado la fuente a Atkinson Hyperlegible, lo que ayuda a las personas con dislexia a reconocer las letras con más facilidad."
+    "message": "El texto en la pestaña actual está siendo desordenado para simular la experiencia de Simone con la dislexia. Una regla de pantalla le ayuda a leer el texto. Simone también utiliza una superposición de color para reducir la fatiga visual. Se ha cambiado la fuente a Atkinson Hyperlegible, lo que ayuda a las personas con dislexia a reconocer las letras con más facilidad."
   },
   "simoneInstructionReadParagraphs": {
     "message": "Prueba a leer párrafos o navegar por formularios con esta configuración. Fíjate qué partes de la página son especialmente difíciles de leer."

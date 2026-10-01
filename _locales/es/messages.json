@@ -3,7 +3,7 @@
     "message": "Simulación de perfiles de accesibilidad"
   },
   "extensionDescription": {
-    "message": "Esta extensión aplica efectos visuales a las páginas web para simular la experiencia de navegación de personas con necesidades de accesibilidad."
+    "message": "Esta extensión aplica efectos visuales y de sonido a las páginas web para simular la experiencia de navegación de personas con necesidades de accesibilidad."
   },
   "popupTitle": {
     "message": "Simulación de perfiles de accesibilidad"
@@ -40,7 +40,7 @@
     "message": "Activa un lector de pantalla en tu dispositivo para ver cómo navega Ashleigh por la página."
   },
   "ashleighInstructionScreenReaderMac": {
-    "message": "En Mac, puedes utilizar el lector de pantalla integrado <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> presionando Cmd + F5."
+    "message": "En macOS, puedes utilizar el lector de pantalla integrado <a href=\"https://support.apple.com/guide/voiceover/welcome/mac\" target=\"_blank\" class=\"kern-link\">VoiceOver</a> presionando Cmd + F5."
   },
   "ashleighInstructionScreenReaderWindows": {
     "message": "En Windows, puedes utilizar el lector de pantalla integrado <a href=\"https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1\" target=\"_blank\" class=\"kern-link\">Narrator</a> presionando la tecla del logotipo de Windows + Ctrl + Enter."
@@ -53,25 +53,25 @@
     "message": "Una persona con autismo que se distrae fácilmente cuando navega por Internet."
   },
   "pawelWarning": {
-    "message": "Durante la simulación se reproducirán sonidos fuertes. Por favor comprueba el volumen."
+    "message": "Durante la simulación se reproducirán sonidos fuertes. Por favor, comprueba el volumen."
   },
   "pawelInstructionDistractions": {
     "message": "Verás texto e imágenes en movimiento que simulan las distracciones de Pawel. Asegúrate de tener el sonido activado para escuchar también las distracciones de audio. Pawel utiliza un tema de color que le ayuda a concentrarse en el contenido."
   },
   "pawelMessage01": {
-    "message": "¿He comido ya?"
+    "message": "¿Ya comí?"
   },
   "pawelMessage02": {
-    "message": "Tengo que volver al trabajo pronto..."
+    "message": "Tengo que volver al trabajo pronto…"
   },
   "pawelMessage03": {
     "message": "La ventilación hace mucho ruido hoy. bzzzzzz"
   },
   "pawelMessage04": {
-    "message": "Contesto a ese mensaje?"
+    "message": "¿Contesto a ese mensaje?"
   },
   "pawelMessage05": {
-    "message": "Necesito concentrarme, necesito concentrarme, necesito concentrarme"
+    "message": "Necesito concentrarme, necesito concentrarme, necesito concentrarme."
   },
 
   "simoneTitle": {
@@ -81,10 +81,10 @@
     "message": "Una persona disléxica que necesita más tiempo para entender textos y formularios."
   },
   "simoneInstructionScrambledText": {
-    "message": "El texto en la pestaña actual está siendo desordenado para simular la experiencia de Simone con la dislexia. Una regla de pantalla le ayuda a leer el texto. Simone también utiliza una superposición de color para reducir la fatiga visual. Se ha cambiado la fuente a Atkinson Hyperlegible, lo que ayuda a las personas con dislexia a reconocer las letras con más facilidad."
+    "message": "El texto en la pestaña actual se ha desordenado para simular la experiencia de Simone con la dislexia. Una regla de pantalla le ayuda a leer el texto. Simone también utiliza una superposición de color para reducir la fatiga visual. Se ha cambiado la fuente a Atkinson Hyperlegible, lo que ayuda a las personas con dislexia a reconocer las letras con más facilidad."
   },
   "simoneInstructionReadParagraphs": {
-    "message": "Prueba a leer párrafos o navegar por formularios con esta configuración. Fijate qué partes de la página son especialmente difíciles de leer."
+    "message": "Prueba a leer párrafos o navegar por formularios con esta configuración. Fíjate qué partes de la página son especialmente difíciles de leer."
   },
 
   "ronTitle": {
@@ -129,7 +129,7 @@
     "message": "<strong>Si el cursor sigue siendo visible, intenta moverlo a la barra de direcciones y volver a la página.</strong>"
   },
   "chrisInstructionKeyboardNavigation": {
-    "message": "Deja el ratón a un lado y navega por la página únicamente con el teclado. tiliza las teclas TAB y ENTER y fíjate en el orden de selección de los elementos."
+    "message": "Deja el ratón a un lado y navega por la página únicamente con el teclado. Utiliza las teclas TAB y ENTER y fíjate en el orden de selección de los elementos."
   },
 
   "saleemTitle": {
@@ -139,9 +139,9 @@
     "message": "Una persona sorda cuya lengua principal es la lengua de signos española."
   },
   "saleemInstructionMute": {
-    "message": "La pestaña actual se ha silenciado para simular la experiencia de Saleem con sordera profunda"
+    "message": "La pestaña actual se ha silenciado para simular la experiencia de Saleem con sordera profunda."
   },
   "saleemInstructionVideo": {
-    "message": "Comprueba si los videos tienen subtítulos descriptivos o transcripciones.A Saleem le resulta más fácil recibir información en lengua de signos española (LSE). Fíjate si la web ofrece distintas vías de contacto o dispone de un servicio de retransmisión en BSL."
+    "message": "Comprueba si los videos tienen subtítulos descriptivos o transcripciones. A Saleem le resulta más fácil recibir información en lengua de signos española (LSE). Fíjate si la web ofrece distintas vías de contacto o dispone de un servicio de retransmisión en LSE."
   }
 }
